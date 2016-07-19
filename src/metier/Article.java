@@ -1,15 +1,15 @@
 package metier;
 
 public class Article {
-	private String num;
+	private int num;
 	 private String libelle;
 	 private String description;
 	 private String poids;
 	 private String quantite;
-	public String getNum() {
+	public int getNum() {
 		return num;
 	}
-	public void setNum(String num) {
+	public void setNum(int num) {
 		this.num = num;
 	}
 	public String getLibelle() {
@@ -42,7 +42,7 @@ public class Article {
 				+ ", description=" + description + ", poids=" + poids
 				+ ", quantite=" + quantite + "]";
 	}
-	public Article(String num, String libelle, String description,
+	public Article(int num, String libelle, String description,
 			String poids, String quantite) {
 		super();
 		this.num = num;
