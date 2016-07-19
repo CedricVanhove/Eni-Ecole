@@ -3,7 +3,7 @@ package metier;
 import java.util.ArrayList;
 
 public class Commande {
-	private String num;
+	private int num;
 	private String libelle;
 	private String description;
 	private String poids;
@@ -12,10 +12,10 @@ public class Commande {
 	private ArrayList<Article> lesArticles;
 	private Personnel leSbire;
 	private Client Pepito;
-	public String getNum() {
+	public int getNum() {
 		return num;
 	}
-	public void setNum(String num) {
+	public void setNum(int num) {
 		this.num = num;
 	}
 	public String getLibelle() {
@@ -66,7 +66,7 @@ public class Commande {
 	public void setPepito(Client pepito) {
 		Pepito = pepito;
 	}
-	public Commande(String num, String libelle, String description,
+	public Commande(int num, String libelle, String description,
 			String poids, String etats, String date,
 			ArrayList<Article> lesArticles, Personnel leSbire, Client pepito) {
 		super();

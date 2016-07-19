@@ -2,7 +2,7 @@ package metier;
 
 public class Client 
 {
- private String id;
+ private int id;
  private String nom;
  private String prenom;
  private String adresse;
@@ -10,10 +10,10 @@ public class Client
  private String ville;
  private String tel;
  private String mail;
-public String getId() {
+public int getId() {
 	return id;
 }
-public void setId(String id) {
+public void setId(int id) {
 	this.id = id;
 }
 public String getNom() {
@@ -64,7 +64,7 @@ public String toString() {
 			+ ", adresse=" + adresse + ", CP=" + CP + ", ville=" + ville
 			+ ", tel=" + tel + ", mail=" + mail + "]";
 }
-public Client(String id, String nom, String prenom, String adresse, String cP,
+public Client(int id, String nom, String prenom, String adresse, String cP,
 		String ville, String tel, String mail) {
 	super();
 	this.id = id;
