@@ -30,6 +30,6 @@ public class AccesBase {
 		//activer une connexion du pool
 		cnx=ds.getConnection();
 		
-		return cnx;
+ 		return cnx;
 	}
 }
