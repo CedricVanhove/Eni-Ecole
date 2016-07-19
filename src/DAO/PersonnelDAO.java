@@ -16,13 +16,7 @@ public class PersonnelDAO {
 		metier.Personnel Pepito = new metier.Personnel();
 		try{
 			cnx = AccesBase.getConnection();
-			byte[] uniqueKey = leMdp.getBytes();
-			try {
-				leMdp=MessageDigest.getInstance("MD5").digest(uniqueKey).toString();
-			} catch (NoSuchAlgorithmException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		
 			rqt = cnx.prepareStatement("SELECT * FROM utilisateur where login ='" + leId + "' AND motDePasse='" + leMdp + "'");			
 			rs=rqt.executeQuery();
 			// SI on trouve au moins 1 résultat, on prend le 1er pour mettre à jour les informations de l'Utilisateur utilisé pour la recherche.

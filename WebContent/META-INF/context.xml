@@ -4,7 +4,7 @@
 <Resource name="jdbc/ds1" auth="Container"
 type="javax.sql.DataSource"
 driverClassName= "com.microsoft.sqlserver.jdbc.SQLServerDriver"
-url= "jdbc:sqlserver://10.136.200.1;database=TPJavaEE_Expeditor;"
-username="java" password="Pa$$w0rd"
+url= "jdbc:sqlserver://localhost;database=TPJavaEE_Expeditor;"
+username="sa" password="Pa$$w0rd"
 maxActive="20" maxIdle="10"/>
 </Context>
