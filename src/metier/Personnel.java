@@ -1,16 +1,17 @@
 package metier;
 
 public class Personnel {
-	private String num;
+	private Integer num;
 	private String nom;
 	private String prenom;
 	private String login;
 	private String mdp;
 	private boolean estManager;
-	public String getNum() {
+	
+	public Integer getNum() {
 		return num;
 	}
-	public void setNum(String num) {
+	public void setNum(Integer num) {
 		this.num = num;
 	}
 	public String getNom() {
@@ -49,7 +50,7 @@ public class Personnel {
 				+ ", login=" + login + ", mdp=" + mdp + ", estManager="
 				+ estManager + "]";
 	}
-	public Personnel(String num, String nom, String prenom, String login,
+	public Personnel(Integer num, String nom, String prenom, String login,
 			String mdp, boolean estManager) {
 		super();
 		this.num = num;
