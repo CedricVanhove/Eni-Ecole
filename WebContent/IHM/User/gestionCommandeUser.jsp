@@ -12,7 +12,7 @@
 		<!-- CSS sources -->
 		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/IHM/ressources/app.css" />
 
-	</head>
+	</head> 
 	<body>
 		<div class="container">
 			<div class="row">
