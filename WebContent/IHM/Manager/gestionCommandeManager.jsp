@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ include file="../include/headerManager.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -28,6 +29,7 @@
 							                <th>Numéro de la commande</th>
 							                <th>Etat de la commande</th>
 							                <th>Nom du preparateur</th>
+							                <th></th>
 							            </tr>
 							        </thead>
 							        <tbody>
@@ -35,26 +37,31 @@
 							                <th>5454789</th>
 							                <th>En cours de traitement</th>
 							                <th>Kevin</th>
+							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
 							            </tr>
 							            <tr>
 							                <th>9768486</th>
 							                <th>En cours de traitement</th>
 							                <th>Cédric</th>
+							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
 							            </tr>
 							            <tr>
 							                <th>9458754</th>
 							                <th>En cours de traitement</th>
 							                <th>Mehdi</th>
+							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
 							            </tr>
 							            <tr>
 							                <th>9545484</th>
 							                <th>En attente</th>
 							                <th>???</th>
+							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
 							            </tr>
 							            <tr>
 							                <th>8784848</th>
 							                <th>En attente</th>
 							                <th>???</th>
+							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
 							            </tr>
 									</tbody>
     							</table>

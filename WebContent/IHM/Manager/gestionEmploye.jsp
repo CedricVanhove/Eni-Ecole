@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ include file="../include/headerManager.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -30,6 +31,7 @@
 							                <th>Prenom</th>
 							                <th>Login</th>
 							                <th>Manager</th>
+							                <th></th>
 							            </tr>
 							        </thead>
 							        <tbody>
@@ -39,6 +41,7 @@
 							                <th>Kevin</th>
 							                <th>kfevre</th>
 							                <th><INPUT type="checkbox" name="managerCheckbox" value="1"></th>
+							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
 							            </tr>
 							            <tr>
 							                <th>001</th>
@@ -46,6 +49,7 @@
 							                <th>Cédric</th>
 							                <th>cvanhove</th>
 							                <th><INPUT type="checkbox" name="managerCheckbox" value="2" checked ></th>
+							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
 							            </tr>
 									</tbody>
     							</table>

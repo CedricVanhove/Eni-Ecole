@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ include file="../include/headerUser.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -44,6 +45,7 @@
 							                <th>Quantité</th>
 							                <th>Stock</th>
 							                 <th>Validé</th>
+							                 <th></th>
 							            </tr>
 							        </thead>
 							        <tbody>
@@ -53,6 +55,7 @@
 							                <th>4</th>
 							                <th>99999</th>
 							                <th><input type="number" value="0" min="0" max="300"></th>
+							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
 							            </tr>
 							            <tr>
 							                <th>Carte Mere</th>
@@ -60,6 +63,7 @@
 							                <th>1</th>
 							                <th>99999</th>
 							                <th><input type="number" value="0" min="0" max="300"></th>
+							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
 							            </tr>
 							            <tr>
 							                <th>Carte Graphique</th>
@@ -67,6 +71,7 @@
 							                <th>2</th>
 							                <th>99999</th>
 							                <th><input type="number" value="0" min="0" max="300"></th>
+							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
 							            </tr>
 							            <tr>
 							                <th>Alimentation</th>
@@ -74,6 +79,7 @@
 							                <th>1</th>
 							                <th>99999</th>
 							                <th><input type="number" value="0" min="0" max="300"></th>
+							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
 							            </tr>
 									</tbody>
     							</table>

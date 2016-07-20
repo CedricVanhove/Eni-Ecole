@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ include file="../include/headerManager.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -30,6 +31,7 @@
 							                <th>Libelle</th>
 							                <th>Stock</th>
 							                <th>Poids Unitaire</th>
+							                <th></th>
 							            </tr>
 							        </thead>
 							        <tbody>
@@ -38,24 +40,28 @@
 							                <th>Disque dur 2'5</th>
 							                <th>99999</th>
 							                <th>150</th>
+							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
 							            </tr>
 							            <tr>
 							                <th>002</th>
 							                <th>Carte graphique</th>
 							                <th>99999</th>
 							                <th>150</th>
+							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
 							            </tr>
 							            <tr>
 							                <th>003</th>
 							                <th>Carte Mére</th>
 							                <th>99999</th>
 							                <th>200</th>
+							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
 							            </tr>
 							            <tr>
 							                <th>004</th>
 							                <th>Alimentation</th>
 							                <th>99999</th>
 							                <th>300</th>
+							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
 							            </tr>
 									</tbody>
     							</table>
