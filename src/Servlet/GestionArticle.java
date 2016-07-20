@@ -78,6 +78,5 @@ public class GestionArticle extends HttpServlet {
 			article.setPoids(pdsArt);		
 			ArticleDAO.Delete(Integer.parseInt(id));
 		}
-			
 }
 }
