@@ -38,6 +38,9 @@ public DetailsCommande(int numLigne, Commande laCommande, Article lArticle,
 	this.lArticle = lArticle;
 	this.qte = qte;
 }
+public DetailsCommande() {
+	// TODO Auto-generated constructor stub
+}
  
  
 }
