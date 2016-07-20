@@ -9,7 +9,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  <servlet> 
+  <servlet>
     <description></description>
     <display-name>Login</display-name>
     <servlet-name>Login</servlet-name>
@@ -57,5 +57,15 @@
   <servlet-mapping>
     <servlet-name>GestionArticle</servlet-name>
     <url-pattern>/GestionArticle</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListerEmploye</display-name>
+    <servlet-name>ListerEmploye</servlet-name>
+    <servlet-class>Servlet.ListerEmploye</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListerEmploye</servlet-name>
+    <url-pattern>/ListerEmploye</url-pattern>
   </servlet-mapping>
 </web-app>
