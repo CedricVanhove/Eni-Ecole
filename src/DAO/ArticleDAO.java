@@ -12,7 +12,7 @@ import metier.Article;
 
 public class ArticleDAO 
 {
- public ArrayList<Article> getLesArticles() throws SQLException
+ public static ArrayList<Article> getLesArticles() throws SQLException
  {
 	 
 	 ArrayList<Article> lesArticles = new ArrayList<Article>();
@@ -34,7 +34,7 @@ public class ArticleDAO
 			 lArticle.setLibelle(result.getString("libelle"));
 			 lArticle.setDescription(result.getString("description"));
 			 lArticle.setPoids(result.getString("poids"));
-			
+			lesArticles.add(lArticle);
 			 
 		 }
 	} catch (SQLException e) {
@@ -49,7 +49,7 @@ public class ArticleDAO
 	return lesArticles;
 	 
  }
- public boolean Insert(Article item)
+ public static boolean Insert(Article item)
  {
 	 boolean izOkay = false;
 	 PreparedStatement state = null;
@@ -74,7 +74,7 @@ public class ArticleDAO
 	
 	 return izOkay;
  }
- public boolean Delete(int id)
+ public static boolean Delete(int id)
  {
 	 boolean izOkay = false;
 	 PreparedStatement state = null;
@@ -98,7 +98,7 @@ public class ArticleDAO
 	
 	 return izOkay;
  }
- public boolean Update(Article item)
+ public static boolean Update(Article item)
  {
 	 boolean izOkay = false;
 	 PreparedStatement state = null;
@@ -123,5 +123,43 @@ public class ArticleDAO
 	}
 	
 	 return izOkay;
+ }
+ 
+ public static Article getLArticleId(int id) throws SQLException
+ {
+	 
+	 Article lArticle = new Article();
+	Statement state = null;
+	ResultSet result = null;
+	try {
+		
+		 
+		 
+		 Connection conn = AccesBase.getConnection();
+		 state = conn.createStatement();
+		    
+		 result = state.executeQuery("SELECT * FROM article where idArticle=" + id);
+		 ResultSetMetaData resultMeta = result.getMetaData();   
+		   
+		 while(result.next())
+		 {
+			 lArticle.setNum(result.getInt("idArticle")); // verif nom des colonnes
+			 lArticle.setLibelle(result.getString("libelle"));
+			 lArticle.setDescription(result.getString("description"));
+			 lArticle.setPoids(result.getString("poids"));
+			
+			 
+		 }
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	finally
+	{
+		  result.close();
+		     state.close();
+	}   
+	return lArticle;
+	 
  }
 }
