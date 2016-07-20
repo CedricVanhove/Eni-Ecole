@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
+import metier.Article;
 import metier.Client;
 
 public class ClientDAO { 
@@ -80,7 +83,8 @@ public class ClientDAO {
 		return client;
 	}
 	
-	public static Client getClient() throws SQLException{
+	public static ArrayList<Client> getClient() throws SQLException{
+		ArrayList<Client> clients=new ArrayList<Client>();
 		Client client = new Client();
 		PreparedStatement rqt=null;
 		Connection cnx=null;
@@ -96,13 +100,14 @@ public class ClientDAO {
 				client.setCP(rs.getString("cp"));
 				client.setVille(rs.getString("ville"));	
 				client.setMail(rs.getString("mail"));
+				clients.add(client);
 			}
 		}finally{
 			if (rs!=null) rs.close();
 			if (rqt!=null) rqt.close();
 			if (cnx!=null) cnx.close();
 		}
-		return client;
+		return clients;
 	}
 
 	
