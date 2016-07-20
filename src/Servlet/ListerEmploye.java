@@ -10,9 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import metier.Personnel;
 import DAO.PersonnelDAO;
-import DAO.QuestionDAO;
-import METIER.Question;
 
 /**
  * Servlet implementation class ListerEmploye
@@ -50,7 +49,7 @@ public class ListerEmploye extends HttpServlet {
 			try 
 			{
 					
-				lePersonnel = PersonnelDAO.getEmploye() ;			
+				lePersonnel = PersonnelDAO.getLePersonnel() ;			
 			}
 			catch (SQLException sqle)
 			{

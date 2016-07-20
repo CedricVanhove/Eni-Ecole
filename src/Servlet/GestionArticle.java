@@ -44,7 +44,7 @@ public class GestionArticle extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 	}
-	protected void valider(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+/*	protected void valider(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
      	RequestDispatcher dispatcher;
      	String ajouterParam = request.getParameter("bAjouter"); 
@@ -89,5 +89,5 @@ public class GestionArticle extends HttpServlet {
 		{
 			
 		}
-}
+}*/
 }
