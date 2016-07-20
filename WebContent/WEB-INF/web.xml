@@ -48,4 +48,14 @@
     <servlet-name>GestionEmploye</servlet-name>
     <url-pattern>/GestionEmploye</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GestionArticle</display-name>
+    <servlet-name>GestionArticle</servlet-name>
+    <servlet-class>Servlet.GestionArticle</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GestionArticle</servlet-name>
+    <url-pattern>/GestionArticle</url-pattern>
+  </servlet-mapping>
 </web-app>
