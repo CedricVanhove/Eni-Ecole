@@ -61,6 +61,7 @@ public class ListerEmploye extends HttpServlet {
 				dispatcher.forward(request, response);
 				return;
 			}
+			
 			request.getSession().setAttribute("ListerEmploye",lePersonnel);
 			dispatcher = request.getRequestDispatcher("IHM/Manager/gestionEmploye.jsp"); 
 			dispatcher.forward(request, response);
