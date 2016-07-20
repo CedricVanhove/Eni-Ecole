@@ -1,5 +1,6 @@
 package metier;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 public class Commande {
@@ -8,7 +9,7 @@ public class Commande {
 	private String description;
 	private String poids;
 	private String Etats;
-	private String Date;
+	private java.sql.Date laDate;
 	private ArrayList<DetailsCommande> lesLignes;
 	private Personnel leSbire;
 	private Client Pepito;
@@ -42,11 +43,11 @@ public class Commande {
 	public void setEtats(String etats) {
 		Etats = etats;
 	}
-	public String getDate() {
-		return Date;
-	}
-	public void setDate(String date) {
-		Date = date;
+	public Date getDate() {
+		return laDate;
+	} 
+	public void setDate(Date date) {
+		laDate = date;
 	}
 	public ArrayList<DetailsCommande> getLesArticles() {
 		return lesLignes;
@@ -67,7 +68,7 @@ public class Commande {
 		Pepito = pepito;
 	}
 	public Commande(int num, String libelle, String description,
-			String poids, String etats, String date,
+			String poids, String etats, Date date,
 			ArrayList<DetailsCommande> lesArticles, Personnel leSbire, Client pepito) {
 		super();
 		this.num = num;
@@ -75,7 +76,7 @@ public class Commande {
 		this.description = description;
 		this.poids = poids;
 		Etats = etats;
-		Date = date;
+		laDate = date;
 		this.lesLignes = lesArticles;
 		this.leSbire = leSbire;
 		Pepito = pepito;
