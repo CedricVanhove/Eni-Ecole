@@ -21,7 +21,7 @@ public class PersonnelDAO {
 		
 		try {
 			
-			 Personnel unePersonne = new Personnel();
+		
 			 
 			 Connection conn = AccesBase.getConnection();
 			 state = conn.createStatement();
@@ -31,6 +31,7 @@ public class PersonnelDAO {
 			   
 			 while(result.next())
 			 {
+				 Personnel unePersonne = new Personnel();
 				 unePersonne.setNum(result.getInt("idUtilisateur")); // verif nom des colonnes
 				 unePersonne.setNom(result.getString("nom"));
 				 unePersonne.setPrenom(result.getString("prenom"));
