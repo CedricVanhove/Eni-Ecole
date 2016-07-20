@@ -5,7 +5,6 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Gestion des articles</title>
-		<div w3-include-html="../include/headerManager.html"></div> 
 		
 		<!-- Bootstrap sources -->
 		<link rel="stylesheet" type="text/css" href="../ressources/bootstrap-3.3.6-dist/css/bootstrap.min.css" />
