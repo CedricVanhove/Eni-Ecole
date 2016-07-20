@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import metier.Article;
 import metier.Personnel;
 
-
 public class PersonnelDAO {
 
 	public static Personnel UtilisateurExiste(String login ,String leMdp ) throws SQLException{
@@ -16,6 +15,7 @@ public class PersonnelDAO {
 		PreparedStatement rqt = null;
 		ResultSet rs = null;
 		metier.Personnel Pepito = new metier.Personnel();
+
 		try{
 			cnx = AccesBase.getConnection();
 		
