@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DAO.PersonnelDAO;
 import metier.Personnel;
 
 /**
@@ -48,21 +49,31 @@ public class GestionEmploye extends HttpServlet {
 		String modifParam = request.getParameter("bModifier");
 		String supprimeParam = request.getParameter("bSupprimer");
 		
-		String nom = request.getParameter("nom");
-		String prenom = request.getParameter("prenom");
-		String login =  request.getParameter("login");
-		String mdp =  request.getParameter("mdp");
-		
+		String nom = request.getParameter("nomEmp");
+		String prenom = request.getParameter("prenomEmp");
+		String login =  request.getParameter("loginEmp");
+		String mdp =  request.getParameter("mdpEmp");
+		String estManager =  request.getParameter("managerCheckbox");
 		Personnel unePersonne = new Personnel();
 		
 		if(ajouterParam != null)
 		{
-			unePersonne.setEnonce(enonce);
-			if(taRace != null) laQuestion.setMarque(1);
+			unePersonne.setNom(nom);
+			unePersonne.setPrenom(prenom);
+			unePersonne.setLogin(login);
+			unePersonne.setMdp(mdp);
+			if(estManager != null) 
+			{
+				unePersonne.setEstManager(true);
+			}
+			else
+			{
+				unePersonne.setEstManager(false);
+			}
 			
 			try {
-				QuestionDAO.QuestionAjouter(laQuestion);
-			} catch (SQLException e) {
+				PersonnelDAO.Insert(unePersonne);
+				} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

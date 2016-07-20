@@ -55,7 +55,7 @@
     							</table>
     							
     							<h1>Ajout d'un employé</h1>										
-								<form action="AjoutEmploye" name="ajoutEmploye" role="form" class="form-horizontal" method="post" accept-charset="utf-8">					
+								<form action="GestionEmploye" name="ajoutEmploye" role="form" class="form-horizontal" method="post" accept-charset="utf-8">					
 									<div class="form-group">
 									
 										<div class="col-md-8"><input name="nomEmp" placeholder="Nom" class="form-control input-md" type="text" id="nomEmp"/></div>
@@ -77,7 +77,7 @@
 									
 									<div class="form-group">
 										<div class="col-md-offset-0 col-md-8">
-											<input  class="btn btn-success btn btn-success" type="submit" value="Enregistrer"/>
+											<input  class="btn btn-success btn btn-success" type="submit" name="bAjouter" value="Ajouter"/>
 										</div>
 									</div>								
 								</form>
