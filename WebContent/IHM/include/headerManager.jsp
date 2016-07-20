@@ -5,11 +5,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<!-- Bootstrap core CSS -->
     <%-- <link href="<%=request.getContextPath()%>/Librairies/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet"> --%>
-    <link href="../ressources/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/IHM/ressources/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
 	
     <!-- Custom styles for this template -->
     <%-- <link href="<%=request.getContextPath()%>/css/navbar.css" rel="stylesheet"> --%>
-    <link href="../ressources/navbar.css" rel="stylesheet">
+    <link href="<%=request.getContextPath()%>/IHM/ressources/navbar.css" rel="stylesheet">
 <title>ENI - Expeditor</title>
 </head>
 <body>
@@ -47,6 +47,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="<%=request.getContextPath()%>/Librairies/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script src="<%=request.getContextPath()%>/IHM/ressources/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 </body>
 </html>
