@@ -10,7 +10,7 @@
 	
     <!-- Custom styles for this template -->
     <%-- <link href="<%=request.getContextPath()%>/css/navbar.css" rel="stylesheet"> --%>
-    <link href="../ressources/css/navbar.css" rel="stylesheet">
+    <link href="../ressources/navbar.css" rel="stylesheet">
 <title>ENI - ECF</title>
 </head>
 <body> 
