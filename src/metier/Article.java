@@ -5,7 +5,7 @@ public class Article {
 	 private String libelle;
 	 private String description;
 	 private String poids;
-	 private String quantite;
+	
 	public int getNum() {
 		return num;
 	}
@@ -30,17 +30,12 @@ public class Article {
 	public void setPoids(String poids) {
 		this.poids = poids;
 	}
-	public String getQuantite() {
-		return quantite;
-	}
-	public void setQuantite(String quantite) {
-		this.quantite = quantite;
-	}
+	
 	@Override
 	public String toString() {
 		return "Article [num=" + num + ", libelle=" + libelle
 				+ ", description=" + description + ", poids=" + poids
-				+ ", quantite=" + quantite + "]";
+				+ "]";
 	}
 	public Article(int num, String libelle, String description,
 			String poids, String quantite) {
@@ -49,7 +44,7 @@ public class Article {
 		this.libelle = libelle;
 		this.description = description;
 		this.poids = poids;
-		this.quantite = quantite;
+	
 	}
 	public Article() {
 		super();
