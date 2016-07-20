@@ -6,7 +6,7 @@ body {
 
 
 .main {
-	background: white url(../image/wallpaperConnexion.jpeg) right top no-repeat;
+	background: white url(wallpaperConnexion.jpeg) right top no-repeat;
 	background-size: contain;
 	padding: 15px 20px 20px;
 	margin-top: 80px;
