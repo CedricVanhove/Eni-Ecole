@@ -51,7 +51,8 @@ public class ListerEmploye extends HttpServlet {
 			try 
 			{
 					
-				lePersonnel = PersonnelDAO.getLePersonnel() ;			
+				lePersonnel = PersonnelDAO.getLePersonnel() ;
+				
 			}
 			catch (SQLException sqle)
 			{
