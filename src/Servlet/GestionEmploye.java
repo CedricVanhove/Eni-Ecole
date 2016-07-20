@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DAO.PersonnelDAO;
 import metier.Personnel;
 
 /**
@@ -52,17 +53,27 @@ public class GestionEmploye extends HttpServlet {
 		String prenom = request.getParameter("prenom");
 		String login =  request.getParameter("login");
 		String mdp =  request.getParameter("mdp");
-		
+		String estManager =  request.getParameter("checkboxeManager");
 		Personnel unePersonne = new Personnel();
 		
 		if(ajouterParam != null)
 		{
-			unePersonne.setEnonce(enonce);
-			if(taRace != null) laQuestion.setMarque(1);
+			unePersonne.setNom(nom);
+			unePersonne.setPrenom(prenom);
+			unePersonne.setLogin(login);
+			unePersonne.setMdp(mdp);
+			if(estManager != null) 
+			{
+				unePersonne.setEstManager(true);
+			}
+			else
+			{
+				unePersonne.setEstManager(false);
+			}
 			
 			try {
-				QuestionDAO.QuestionAjouter(laQuestion);
-			} catch (SQLException e) {
+				PersonnelDAO.Insert(unePersonne);
+				} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

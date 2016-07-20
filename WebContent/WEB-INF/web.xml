@@ -46,6 +46,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>GestionEmploye</servlet-name>
-    <url-pattern>/GestionEmploye</url-pattern>
+    <url-pattern>/IHM/Manager/GestionEmploye</url-pattern>
   </servlet-mapping>
 </web-app>

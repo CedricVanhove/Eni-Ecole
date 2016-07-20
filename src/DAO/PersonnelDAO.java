@@ -56,7 +56,7 @@ public class PersonnelDAO {
 		return Pepito;
 	}
 	
-	 public boolean Insert(Personnel item)
+	 public static boolean Insert(Personnel item)throws SQLException
 	 {
 		 boolean izOkay = false;
 		 PreparedStatement state = null;
@@ -83,7 +83,7 @@ public class PersonnelDAO {
 		
 		 return izOkay;
 	 }
-	 public boolean Delete(int id)
+	 public static boolean Delete(int id) throws SQLException
 	 {
 		 boolean izOkay = false;
 		 PreparedStatement state = null;
@@ -107,7 +107,7 @@ public class PersonnelDAO {
 		
 		 return izOkay;
 	 }
-	 public boolean Update(Personnel item)
+	 public static boolean Update(Personnel item) throws SQLException
 	 {
 		 boolean izOkay = false;
 		 PreparedStatement state = null;
