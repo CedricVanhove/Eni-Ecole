@@ -55,19 +55,22 @@
     							</table>
     							
     							<h1>Ajout d'un employé</h1>										
-								<form action="Login" name="login" role="form" class="form-horizontal" method="post" accept-charset="utf-8">					
+								<form action="AjoutEmploye" name="ajoutEmploye" role="form" class="form-horizontal" method="post" accept-charset="utf-8">					
 									<div class="form-group">
-										<div class="col-md-8"><input name="nomEmp" placeholder="Nom" class="form-control" type="text" id="nomEmp"/></div>
+									
+										<div class="col-md-8"><input name="nomEmp" placeholder="Nom" class="form-control input-md" type="text" id="nomEmp"/></div>
 									</div> 
 									
 									<div class="form-group">
-										<div class="col-md-8"><input name="prenomEmp" placeholder="Prenom" class="form-control" type="password" id="prenomEmp"/></div>
+										<div class="col-md-8"><input name="prenomEmp" placeholder="Prenom" class="form-control input-md" type="text" id="prenomEmp"/></div>
 									</div>
 									
 									<div class="form-group">
-										<div class="col-md-8"><input name="loginEmp" placeholder="Login" class="form-control" type="password" id=""loginEmp""/></div>
+										<div class="col-md-8"><input name="loginEmp" placeholder="Login" class="form-control input-md" type="text" id="loginEmp"/></div>
 									</div>
-									
+									<div class="form-group">
+										<div class="col-md-8"><input name="mdpEmp" placeholder="Mdp" class="form-control input-md" type="text" id="Mdp"/></div>
+									</div>
 									<div class="form-group">
 										<div class="col-md-8"><INPUT type="checkbox" name="managerCheckbox" value="3" ></div>
 									</div>
