@@ -23,14 +23,9 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">ENI - ECF</a>
+            <a class="navbar-brand" href="#">ENI - Expeditor</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-            <li><a href="<%=request.getContextPath()%>/candidat/accueilCandidat.jsp">Accueil</a></li>
-            	<li><a href="#">Passer un Test</a></li>
-            	<li><a href="<%=request.getContextPath()%>/candidat/resultatTest.jsp">Voir les résultats</a></li>                  
-            </ul>
             <ul class="nav navbar-nav navbar-right">
 				<li><a href="<%=request.getContextPath()%>/deconnexion">Déconnexion</a></li>
 			</ul>
