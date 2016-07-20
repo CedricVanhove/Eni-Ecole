@@ -52,6 +52,7 @@ public class ClientDAO {
 		}
 		return client;
 	}
+	
 
 	public static Client getClientByNom(String nom,String cp) throws SQLException{
 		Client client = new Client();
