@@ -44,7 +44,7 @@ public class GestionArticle extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 	}
-/*	protected void valider(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void valider(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
      	RequestDispatcher dispatcher;
      	String ajouterParam = request.getParameter("bAjouter"); 
@@ -53,27 +53,28 @@ public class GestionArticle extends HttpServlet {
 		
 		String libelleArticle = request.getParameter("libelleArticle");
 		String stockArticle = request.getParameter("stockArticle");
-		String qteDde =  request.getParameter("stockArticle");
-		String mdp =  request.getParameter("poidsArticle");
-		Personnel unePersonne = new Personnel();
+		String qteCde =  request.getParameter("quantiteCommande");
+		String pdsArt =  request.getParameter("poidsArticle");
+		Article article = new Article();
+		
 		
 		if(ajouterParam != null)
 		{
-			unePersonne.setNom(nom);
-			unePersonne.setPrenom(prenom);
-			unePersonne.setLogin(login);
-			unePersonne.setMdp(mdp);
+			article.setLibelle(libelleArticle);
+			article.setPrenom(prenom);
+			article.setLogin(login);
+			article.setMdp(mdp);
 			if(estManager != null) 
 			{
-				unePersonne.setEstManager(true);
+				article.setEstManager(true);
 			}
 			else
 			{
-				unePersonne.setEstManager(false);
+				article.setEstManager(false);
 			}
 			
 			try {
-				PersonnelDAO.Insert(unePersonne);
+				PersonnelDAO.Insert(article);
 				} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -89,5 +90,5 @@ public class GestionArticle extends HttpServlet {
 		{
 			
 		}
-}*/
+}
 }
