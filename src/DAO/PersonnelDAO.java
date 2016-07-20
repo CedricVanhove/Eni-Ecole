@@ -18,6 +18,7 @@ public class PersonnelDAO {
 		 ArrayList<Personnel> lePersonnel = new ArrayList<Personnel>();
 		Statement state = null;
 		ResultSet result = null;
+		
 		try {
 			
 			 Personnel unePersonne = new Personnel();
