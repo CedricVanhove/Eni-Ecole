@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import DAO.ArticleDAO;
+import DAO.PersonnelDAO;
 import metier.Article;
+import metier.Personnel;
 
 /**
  * Servlet implementation class GestionArticle
@@ -42,27 +44,50 @@ public class GestionArticle extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 	}
-	protected void processRequest(HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException, SQLException{
-		RequestDispatcher dispatcher; 
-		String ajouterArticle = request.getParameter("ajouter");
-		ArrayList<Article> listeArticle= new ArrayList<Article>();
-		Article article = null; 
-		if(ajouterArticle == null){
-			listeArticle = ArticleDAO.getLesArticles();
-			request.setAttribute("listeArticle", listeArticle);
-			dispatcher = request.getRequestDispatcher("/Manager/gestionArticle.jsp");
-			dispatcher.forward(request, response);
-		}
-		if ("ajoute".equals(ajouterClient) && client == null){
-			client = new Candidat();
-			client.setNom(request.getParameter("nom"));
-			client.setPrenom(request.getParameter("prenom"));
-			client.setEmail(request.getParameter("email"));
-			client.setPassword(request.getParameter("motdepasse"));
-			client.setPromotion(PromotionDAO.getPromobyId(request.getParameter("listePromo")));
-			
-			CandidatDAO.addCandidat(client);
-		}
+	protected void valider(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	}
+     	RequestDispatcher dispatcher;
+     	String ajouterParam = request.getParameter("bAjouter"); 
+		String modifParam = request.getParameter("bModifier");
+		String supprimeParam = request.getParameter("bSupprimer");
+		
+		String libelleArticle = request.getParameter("libelleArticle");
+		String stockArticle = request.getParameter("stockArticle");
+		String qteDde =  request.getParameter("stockArticle");
+		String mdp =  request.getParameter("poidsArticle");
+		Personnel unePersonne = new Personnel();
+		
+		if(ajouterParam != null)
+		{
+			unePersonne.setNom(nom);
+			unePersonne.setPrenom(prenom);
+			unePersonne.setLogin(login);
+			unePersonne.setMdp(mdp);
+			if(estManager != null) 
+			{
+				unePersonne.setEstManager(true);
+			}
+			else
+			{
+				unePersonne.setEstManager(false);
+			}
+			
+			try {
+				PersonnelDAO.Insert(unePersonne);
+				} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		if(modifParam != null)
+		{
+			
+		}		
+		
+		if(supprimeParam != null)
+		{
+			
+		}
+}
 }
