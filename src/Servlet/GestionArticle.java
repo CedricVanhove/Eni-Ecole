@@ -44,7 +44,7 @@ public class GestionArticle extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 	}
-	protected void valider(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void valider(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
 
      	RequestDispatcher dispatcher;
      	String ajouterParam = request.getParameter("bAjouter"); 
@@ -55,38 +55,28 @@ public class GestionArticle extends HttpServlet {
 		String stkArt = request.getParameter("stockArticle");
 		String pdsArt =  request.getParameter("poidsArticle");
 		String desc = request.getParameter("description");
+		String id = request.getParameter("idArticle");
 		Article article = new Article();
 		
 		if(ajouterParam != null)
 		{
 			article.setLibelle(libArt);
 			article.setDescription(desc);
-			article.setMdp(mdp);
-			if(estManager != null) 
-			{
-				article.setEstManager(true);
-			}
-			else
-			{
-				article.setEstManager(false);
-			}
-			
-			try {
-				PersonnelDAO.Insert(article);
-				} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			article.setPoids(pdsArt);		
+			ArticleDAO.Insert(article);
 		}
-		
 		if(modifParam != null)
 		{
-			
-		}		
-		
-		if(supprimeParam != null)
+			article.setLibelle(libArt);
+			article.setDescription(desc);
+			article.setPoids(pdsArt);		
+			ArticleDAO.Update(article);
+		}if(modifParam != null)
 		{
-			
+			article.setLibelle(libArt);
+			article.setDescription(desc);
+			article.setPoids(pdsArt);		
+			ArticleDAO.Delete(Integer.parseInt(id));
 		}
 }
 }
