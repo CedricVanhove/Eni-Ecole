@@ -9,7 +9,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-   <servlet>
+  <servlet>
     <description></description>
     <display-name>Login</display-name>
     <servlet-name>Login</servlet-name>
@@ -28,4 +28,24 @@
   <session-config>
     <session-timeout>30</session-timeout>
   </session-config>
+  <servlet>
+    <description></description>
+    <display-name>Deconnecter</display-name>
+    <servlet-name>Deconnecter</servlet-name>
+    <servlet-class>Servlet.Deconnecter</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Deconnecter</servlet-name>
+    <url-pattern>/deconnexion</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GestionEmploye</display-name>
+    <servlet-name>GestionEmploye</servlet-name>
+    <servlet-class>Servlet.GestionEmploye</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GestionEmploye</servlet-name>
+    <url-pattern>/GestionEmploye</url-pattern>
+  </servlet-mapping>
 </web-app>
