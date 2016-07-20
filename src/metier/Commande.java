@@ -9,7 +9,7 @@ public class Commande {
 	private String poids;
 	private String Etats;
 	private String Date;
-	private ArrayList<Article> lesArticles;
+	private ArrayList<DetailsCommande> lesLignes;
 	private Personnel leSbire;
 	private Client Pepito;
 	public int getNum() {
@@ -48,11 +48,11 @@ public class Commande {
 	public void setDate(String date) {
 		Date = date;
 	}
-	public ArrayList<Article> getLesArticles() {
-		return lesArticles;
+	public ArrayList<DetailsCommande> getLesArticles() {
+		return lesLignes;
 	}
-	public void setLesArticles(ArrayList<Article> lesArticles) {
-		this.lesArticles = lesArticles;
+	public void setLesArticles(ArrayList<DetailsCommande> lesArticles) {
+		this.lesLignes = lesArticles;
 	}
 	public Personnel getLeSbire() {
 		return leSbire;
@@ -68,7 +68,7 @@ public class Commande {
 	}
 	public Commande(int num, String libelle, String description,
 			String poids, String etats, String date,
-			ArrayList<Article> lesArticles, Personnel leSbire, Client pepito) {
+			ArrayList<DetailsCommande> lesArticles, Personnel leSbire, Client pepito) {
 		super();
 		this.num = num;
 		this.libelle = libelle;
@@ -76,7 +76,7 @@ public class Commande {
 		this.poids = poids;
 		Etats = etats;
 		Date = date;
-		this.lesArticles = lesArticles;
+		this.lesLignes = lesArticles;
 		this.leSbire = leSbire;
 		Pepito = pepito;
 	}
@@ -84,7 +84,7 @@ public class Commande {
 		super();
 		this.Pepito = new Client();
 		this.leSbire = new Personnel();
-		this.lesArticles = new ArrayList<Article>();
+		this.lesLignes = new ArrayList<DetailsCommande>();
 		
 	}
 	
