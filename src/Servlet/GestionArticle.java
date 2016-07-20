@@ -51,18 +51,16 @@ public class GestionArticle extends HttpServlet {
 		String modifParam = request.getParameter("bModifier");
 		String supprimeParam = request.getParameter("bSupprimer");
 		
-		String libelleArticle = request.getParameter("libelleArticle");
-		String stockArticle = request.getParameter("stockArticle");
-		String qteCde =  request.getParameter("quantiteCommande");
+		String libArt = request.getParameter("libelleArticle");
+		String stkArt = request.getParameter("stockArticle");
 		String pdsArt =  request.getParameter("poidsArticle");
+		String desc = request.getParameter("description");
 		Article article = new Article();
-		
 		
 		if(ajouterParam != null)
 		{
-			article.setLibelle(libelleArticle);
-			article.setPrenom(prenom);
-			article.setLogin(login);
+			article.setLibelle(libArt);
+			article.setDescription(desc);
 			article.setMdp(mdp);
 			if(estManager != null) 
 			{
