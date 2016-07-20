@@ -5,9 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import metier.Article;
+import metier.Personnel;
+
 public class PersonnelDAO {
 
-	public static metier.Personnel UtilisateurExiste(String login ,String leMdp ) throws SQLException{
+	public static Personnel UtilisateurExiste(String login ,String leMdp ) throws SQLException{
 		Connection cnx = null;
 		PreparedStatement rqt = null;
 		ResultSet rs = null;
@@ -52,6 +55,84 @@ public class PersonnelDAO {
 		return Pepito;
 	}
 	
-	
+	 public boolean Insert(Personnel item)
+	 {
+		 boolean izOkay = false;
+		 PreparedStatement state = null;
+		ResultSet result = null;
+		try
+		{
+			 Connection conn = AccesBase.getConnection();
+			 state = conn.prepareStatement( "INSERT INTO utilisateur (nom, prenom, login,motDePasse,estManager) VALUES(?, ?, ?,?,?);" );
+
+			 state.setString( 1, item.getNom());
+			  state.setString( 2, item.getPrenom());
+			  state.setString( 3, item.getLogin() );
+			  state.setString( 4, item.getMdp());
+			  state.setBoolean(5, item.isEstManager() );
+
+			 /* Exécution de la requête */
+			 int statut = state.executeUpdate();
+			 if(statut > 0 ) izOkay = true;
+		}
+		catch( Exception ex)
+		{
+			izOkay = false;
+		}
+		
+		 return izOkay;
+	 }
+	 public boolean Delete(int id)
+	 {
+		 boolean izOkay = false;
+		 PreparedStatement state = null;
+		ResultSet result = null;
+		try
+		{
+			 Connection conn = AccesBase.getConnection();
+			 state = conn.prepareStatement( "Delete from utilisateur where idUtilisateur = ?" );
+
+			state.setInt(  1, id);
+			 
+
+			 /* Exécution de la requête */
+			 int statut = state.executeUpdate();
+			 if(statut > 0 ) izOkay = true;
+		}
+		catch( Exception ex)
+		{
+			izOkay = false;
+		}
+		
+		 return izOkay;
+	 }
+	 public boolean Update(Personnel item)
+	 {
+		 boolean izOkay = false;
+		 PreparedStatement state = null;
+		ResultSet result = null;
+		try
+		{
+			 Connection conn = AccesBase.getConnection();
+			 state = conn.prepareStatement( "Update utilisateur set nom=?,prenom=?,login=?,motDePasse=?,estManager=?" );
+			 state.setString( 1, item.getNom());
+			  state.setString( 2, item.getPrenom());
+			  state.setString( 3, item.getLogin() );
+			  state.setString( 4, item.getMdp());
+			  state.setBoolean(5, item.isEstManager() );
+
+			 
+
+			 /* Exécution de la requête */
+			 int statut = state.executeUpdate();
+			 if(statut > 0 ) izOkay = true;
+		}
+		catch( Exception ex)
+		{
+			izOkay = false;
+		}
+		
+		 return izOkay;
+	 }
 
 }
