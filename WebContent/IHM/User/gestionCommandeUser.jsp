@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Gestion des commandes</title>
+		<title>Gestion des commandes</title> 
 		
 		<!-- Bootstrap sources -->
 		<link rel="stylesheet" type="text/css" href="../ressources/bootstrap-3.3.6-dist/css/bootstrap.min.css" />
