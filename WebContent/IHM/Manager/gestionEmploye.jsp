@@ -95,11 +95,11 @@
 								  </div>
 								</div>
 								
-								<script type="text/javascript">
+								<!--  <script type="text/javascript">
 									$(document).ready(function() {
 									    $('#example').DataTable();
 									} );
-								</script>		
+								</script>-->		
 							</div>
 						</div>						
 					</div>				
