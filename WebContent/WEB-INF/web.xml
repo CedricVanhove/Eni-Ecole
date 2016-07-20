@@ -48,4 +48,34 @@
     <servlet-name>GestionEmploye</servlet-name>
     <url-pattern>/IHM/Manager/GestionEmploye</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GestionArticle</display-name>
+    <servlet-name>GestionArticle</servlet-name>
+    <servlet-class>Servlet.GestionArticle</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GestionArticle</servlet-name>
+    <url-pattern>/GestionArticle</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListerEmploye</display-name>
+    <servlet-name>ListerEmploye</servlet-name>
+    <servlet-class>Servlet.ListerEmploye</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListerEmploye</servlet-name>
+    <url-pattern>/ListerEmploye</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListerArticle</display-name>
+    <servlet-name>ListerArticle</servlet-name>
+    <servlet-class>Servlet.ListerArticle</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListerArticle</servlet-name>
+    <url-pattern>/ListerArticle</url-pattern>
+  </servlet-mapping>
 </web-app>

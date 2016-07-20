@@ -3,13 +3,52 @@ package DAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
-import metier.Article;
 import metier.Personnel;
 
 public class PersonnelDAO {
 
+	public static ArrayList<Personnel> getLePersonnel() throws SQLException
+	 {
+		 
+		 ArrayList<Personnel> lePersonnel = new ArrayList<Personnel>();
+		Statement state = null;
+		ResultSet result = null;
+		try {
+			
+			 Personnel unePersonne = new Personnel();
+			 
+			 Connection conn = AccesBase.getConnection();
+			 state = conn.createStatement();
+			    
+			 result = state.executeQuery("SELECT * FROM personnel");
+			 ResultSetMetaData resultMeta = result.getMetaData();   
+			   
+			 while(result.next())
+			 {
+				 unePersonne.setNum(result.getInt("idUtilisateur")); // verif nom des colonnes
+				 unePersonne.setNom(result.getString("nom"));
+				 unePersonne.setPrenom(result.getString("prenom"));
+				 unePersonne.setLogin(result.getString("login"));
+				lePersonnel.add(unePersonne);
+				 
+			 }
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally
+		{
+			  result.close();
+			     state.close();
+		}   
+		return lePersonnel;
+		 
+	 }
 	public static Personnel UtilisateurExiste(String login ,String leMdp ) throws SQLException{
 		Connection cnx = null;
 		PreparedStatement rqt = null;

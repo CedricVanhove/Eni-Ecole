@@ -53,34 +53,54 @@
 							            </tr>
 									</tbody>
     							</table>
+    							<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Nouveau</button>
     							
-    							<h1>Ajout d'un employé</h1>										
-								<form action="GestionEmploye" name="ajoutEmploye" role="form" class="form-horizontal" method="post" accept-charset="utf-8">					
-									<div class="form-group">
-									
-										<div class="col-md-8"><input name="nomEmp" placeholder="Nom" class="form-control input-md" type="text" id="nomEmp"/></div>
-									</div> 
-									
-									<div class="form-group">
-										<div class="col-md-8"><input name="prenomEmp" placeholder="Prenom" class="form-control input-md" type="text" id="prenomEmp"/></div>
-									</div>
-									
-									<div class="form-group">
-										<div class="col-md-8"><input name="loginEmp" placeholder="Login" class="form-control input-md" type="text" id="loginEmp"/></div>
-									</div>
-									<div class="form-group">
-										<div class="col-md-8"><input name="mdpEmp" placeholder="Mdp" class="form-control input-md" type="text" id="Mdp"/></div>
-									</div>
-									<div class="form-group">
-										<div class="col-md-8"><INPUT type="checkbox" name="managerCheckbox" value="3" ></div>
-									</div>
-									
-									<div class="form-group">
-										<div class="col-md-offset-0 col-md-8">
-											<input  class="btn btn-success btn btn-success" type="submit" name="bAjouter" value="Ajouter"/>
-										</div>
-									</div>								
-								</form>
+    							<div id="myModal" class="modal fade" role="dialog">
+								  <div class="modal-dialog">								
+								    <!-- Modal content-->
+								    <div class="modal-content">
+								      <div class="modal-header">
+								        <button type="button" class="close" data-dismiss="modal">&times;</button>
+								        <h4 class="modal-title">Ajout employé</h4>
+								      </div>
+								      <div class="modal-body">
+								      	
+								      	<h1>Ajout d'un employé</h1>										
+										<form action="GestionEmploye" name="ajoutEmploye" role="form" class="form-horizontal" method="post" accept-charset="utf-8">					
+											<div class="form-group">
+											
+												<div class="col-md-8"><input name="nomEmp" placeholder="Nom" class="form-control input-md" type="text" id="nomEmp"/></div>
+											</div> 
+											
+											<div class="form-group">
+												<div class="col-md-8"><input name="prenomEmp" placeholder="Prenom" class="form-control input-md" type="text" id="prenomEmp"/></div>
+											</div>
+											
+											<div class="form-group">
+												<div class="col-md-8"><input name="loginEmp" placeholder="Login" class="form-control input-md" type="text" id="loginEmp"/></div>
+											</div>
+											<div class="form-group">
+												<div class="col-md-8"><input name="mdpEmp" placeholder="Mdp" class="form-control input-md" type="text" id="Mdp"/></div>
+											</div>
+											<div class="form-group">
+												<div class="col-md-8"><INPUT type="checkbox" name="managerCheckbox" value="3" ></div>
+											</div>
+											
+											<div class="form-group">
+												<div class="col-md-offset-0 col-md-8">
+													<input  class="btn btn-success btn btn-success" type="submit" name="bAjouter" value="Ajouter"/>
+												</div>
+											</div>							
+										</form>
+								      	
+								      </div>
+								      <div class="modal-footer">
+								        <button type="button" name="bAjouter" value="bAjouter" class="btn btn-success" data-dismiss="modal">Valider</button>
+								        <button type="button" name="bAnnuler" value="bAnnuler" class="btn btn-default" data-dismiss="modal">Annuler</button>
+								      </div>
+								    </div>
+								  </div>
+								</div>
 								
 								<script type="text/javascript">
 									$(document).ready(function() {
