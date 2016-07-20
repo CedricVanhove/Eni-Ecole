@@ -1,5 +1,6 @@
 package DAO;
 
-public class ClientDAO {
+public class ClientDAO 
+{
 
 }
