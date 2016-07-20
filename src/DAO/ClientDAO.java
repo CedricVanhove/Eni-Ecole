@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import metier.Client;
 
-public class ClientDAO {
+public class ClientDAO { 
 	
 	public static void addClient(Client client) throws SQLException{
 		PreparedStatement rqt=null;
