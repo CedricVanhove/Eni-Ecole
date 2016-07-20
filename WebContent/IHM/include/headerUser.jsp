@@ -13,7 +13,7 @@
     <link href="../ressources/css/navbar.css" rel="stylesheet">
 <title>ENI - ECF</title>
 </head>
-<body>
+<body> 
 	<div class="container">
       <!-- Static navbar -->
       <nav class="navbar navbar-default">
