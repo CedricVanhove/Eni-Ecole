@@ -4,12 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 public class PersonnelDAO {
 
-	public static metier.Personnel UtilisateurExiste(String leId ,String leMdp ) throws SQLException{
+	public static metier.Personnel UtilisateurExiste(String login ,String leMdp ) throws SQLException{
 		Connection cnx = null;
 		PreparedStatement rqt = null;
 		ResultSet rs = null;
@@ -17,7 +15,9 @@ public class PersonnelDAO {
 		try{
 			cnx = AccesBase.getConnection();
 		
-			rqt = cnx.prepareStatement("SELECT * FROM utilisateur where login ='" + leId + "' AND motDePasse='" + leMdp + "'");			
+			rqt = cnx.prepareStatement("SELECT * FROM utilisateur where login =? AND motDePasse=?");
+			rqt.setString( 1,login );
+			rqt.setString( 2, leMdp);
 			rs=rqt.executeQuery();
 			// SI on trouve au moins 1 résultat, on prend le 1er pour mettre à jour les informations de l'Utilisateur utilisé pour la recherche.
 			if (rs.next()){

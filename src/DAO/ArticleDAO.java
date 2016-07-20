@@ -59,7 +59,7 @@ public class ArticleDAO
 		 Connection conn = AccesBase.getConnection();
 		 state = conn.prepareStatement( "INSERT INTO article (libelle, description, poids) VALUES(?, ?, ?);" );
 
-		state.setString( 1, item.getLibelle());
+		 state.setString( 1, item.getLibelle());
 		  state.setString( 2, item.getDescription());
 		  state.setString( 3, item.getPoids() );
 

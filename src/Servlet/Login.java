@@ -92,7 +92,7 @@ public class Login extends HttpServlet {
 				{
 					isManager=true;				
 					utilisateurConnecteAttName="Utilisateur";
-					menuJsp="/Manager/accueilManager.jsp";
+					menuJsp="/IHM/Manager/gestionCommandeManager.html";
 				}
 				else 
 				{
