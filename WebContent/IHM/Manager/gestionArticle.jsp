@@ -7,10 +7,10 @@
 		<title>Gestion des articles</title>
 		
 		<!-- Bootstrap sources -->
-		<link rel="stylesheet" type="text/css" href="../ressources/bootstrap-3.3.6-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/IHM/ressources/bootstrap-3.3.6-dist/css/bootstrap.min.css" />
 
 		<!-- CSS sources -->
-		<link rel="stylesheet" type="text/css" href="../ressources/app.css" />
+		<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/IHM/ressources/app.css" />
 
 	</head>
 	<body>
