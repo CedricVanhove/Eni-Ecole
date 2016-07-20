@@ -99,7 +99,7 @@
 									$(document).ready(function() {
 									    $('#example').DataTable();
 									} );
-								</script>-->		
+								</script>-->
 							</div>
 						</div>						
 					</div>				
