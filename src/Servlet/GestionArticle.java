@@ -53,7 +53,16 @@ public class GestionArticle extends HttpServlet {
 			dispatcher = request.getRequestDispatcher("/Manager/gestionArticle.jsp");
 			dispatcher.forward(request, response);
 		}
-		
+		if ("ajoute".equals(ajouterClient) && client == null){
+			client = new Candidat();
+			client.setNom(request.getParameter("nom"));
+			client.setPrenom(request.getParameter("prenom"));
+			client.setEmail(request.getParameter("email"));
+			client.setPassword(request.getParameter("motdepasse"));
+			client.setPromotion(PromotionDAO.getPromobyId(request.getParameter("listePromo")));
+			
+			CandidatDAO.addCandidat(client);
+		}
 
 	}
 }
