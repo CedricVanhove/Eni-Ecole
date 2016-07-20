@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ include file="../include/headerManager.jsp"%>
+<%@ page  import ="metier.*, java.util.*, java.text.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -22,7 +23,9 @@
 							<div class="col-xs-12 col-sm-6 col-sm-offset-1">
 										
 								<h1>Liste des employés</h1>
-								
+									<%
+										ArrayList<Personnel> listePersonne=(ArrayList<Personnel>)request.getSession().getAttribute("ListerEmploye");
+									%>
 								<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 							        <thead>
 							            <tr>
@@ -35,22 +38,26 @@
 							            </tr>
 							        </thead>
 							        <tbody>
+							        <% 
+							        int i=0;
+									String name="";
+									for(Personnel unePersonne : listePersonne) {
+										i=i+1;
+										
+									%>
 							            <tr>
-							                <th>002</th>
-							                <th>FEVRE</th>
-							                <th>Kevin</th>
-							                <th>kfevre</th>
-							                <th><INPUT type="checkbox" name="managerCheckbox" value="1"></th>
+								            
+											<td><%=unePersonne.getNum()%></td>
+											<td><%=unePersonne.getNom()%></td>
+											<td><%=unePersonne.getPrenom()%></td>
+											<td><%=unePersonne.getLogin()%></td>											
+							                <td><input type="checkbox" name="managerCheckbox" id="managerCheckbox" value="<%=i%>"></td>
+							                
 							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
 							            </tr>
-							            <tr>
-							                <th>001</th>
-							                <th>VANHOVE</th>
-							                <th>Cédric</th>
-							                <th>cvanhove</th>
-							                <th><INPUT type="checkbox" name="managerCheckbox" value="2" checked ></th>
-							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
-							            </tr>
+							        <%
+									}
+									%>
 									</tbody>
     							</table>
     							<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Nouveau</button>
@@ -68,7 +75,7 @@
 								      	
 								      	<h1>Ajout d'un employé</h1>	
 								      	
-								      	<form class="form-horizontal col-md-12" action="">
+								      	<form class="form-horizontal col-md-12" method="post" accept-charset="utf-8" action="<%=request.getContextPath()%>/GestionEmploye">
 											<div class="form-group">
 											  	<input name="nomEmp" placeholder="Nom" class="form-control input-md" type="text" id="nomEmp"/>
 											</div>
@@ -84,13 +91,17 @@
 											<div class="form-group">
 												<INPUT type="checkbox" name="managerCheckbox" value="3" >
 											</div>
+											
+											<div class="form-group">
+										<div class="col-md-offset-0 col-md-8"><input  class="btn btn-success btn btn-success" name="bAjouter" type="submit" value="Connexion"/></div>
+										</div>	
 						      			</form>
 						      			
 								      </div>
 								      <div class="modal-footer">
-								        <button type="button" name="bAjouter" value="bAjouter" class="btn btn-success" data-dismiss="modal">Valider</button>
-								        <button type="button" name="bAnnuler" value="bAnnuler" class="btn btn-default" data-dismiss="modal">Annuler</button>
+								       
 								      </div>
+								      
 								    </div>
 								  </div>
 								</div>

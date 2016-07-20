@@ -25,7 +25,7 @@ public class PersonnelDAO {
 			 Connection conn = AccesBase.getConnection();
 			 state = conn.createStatement();
 			    
-			 result = state.executeQuery("SELECT * FROM personnel");
+			 result = state.executeQuery("SELECT * FROM utilisateur");
 			 ResultSetMetaData resultMeta = result.getMetaData();   
 			   
 			 while(result.next())

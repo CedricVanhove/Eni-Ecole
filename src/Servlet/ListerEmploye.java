@@ -32,6 +32,7 @@ public class ListerEmploye extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		lister(request,response);
 	}
 
 	/**
@@ -39,6 +40,7 @@ public class ListerEmploye extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		lister(request,response);
 	}
 	protected void lister(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
