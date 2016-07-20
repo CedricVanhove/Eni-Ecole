@@ -59,7 +59,6 @@ public class GestionEmploye extends HttpServlet {
 		if(ajouterParam != null)
 		{
 			unePersonne.setNom(nom);
-			
 			unePersonne.setPrenom(prenom);
 			unePersonne.setLogin(login);
 			unePersonne.setMdp(mdp);
