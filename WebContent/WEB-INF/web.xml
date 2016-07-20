@@ -9,7 +9,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  <servlet>
+  <servlet> 
     <description></description>
     <display-name>Login</display-name>
     <servlet-name>Login</servlet-name>
@@ -47,5 +47,15 @@
   <servlet-mapping>
     <servlet-name>GestionEmploye</servlet-name>
     <url-pattern>/IHM/Manager/GestionEmploye</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GestionArticle</display-name>
+    <servlet-name>GestionArticle</servlet-name>
+    <servlet-class>Servlet.GestionArticle</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GestionArticle</servlet-name>
+    <url-pattern>/GestionArticle</url-pattern>
   </servlet-mapping>
 </web-app>
