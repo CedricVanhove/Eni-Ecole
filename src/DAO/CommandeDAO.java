@@ -1,5 +1,6 @@
 package DAO;
 
-public class CommandeDAO {
+public class CommandeDAO 
+{
 	// details commande lArticle.setQuantite(result.getString("quantite"));
 }
