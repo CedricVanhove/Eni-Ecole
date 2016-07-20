@@ -20,11 +20,12 @@ public class CommandeDAO
 	 {
 		 
 		 ArrayList<Commande> lesCommandes = new ArrayList<Commande>();
+		 Commande laCommande = new Commande();
 		Statement state = null;
 		ResultSet result = null;
 		try {
 		
-			Commande laCommande = new Commande();
+			
 			 
 			 Connection conn = AccesBase.getConnection();
 			 state = conn.createStatement();
@@ -116,11 +117,10 @@ public class CommandeDAO
 		try
 		{
 			 Connection conn = AccesBase.getConnection();
-			 state = conn.prepareStatement( "Select count(*)  commande where utilisateur = ? AND ETAT LIKE ? OR ?" );
+			 state = conn.prepareStatement( "Select count(*),dateComande from  commande where utilisateur = ? and etat ='FIN' group by dateCommande" );
 
 			 state.setInt( 1, idLarbin);
-			 state.setString( 2, "ECS");
-			 state.setString( 3, "ATT");
+			
 			 
 			 int statut = state.executeUpdate();
 			 if(statut > 0 ) izOkay = true;
@@ -131,5 +131,47 @@ public class CommandeDAO
 		}
 		
 		 return izOkay;
+	 }
+	 public static ArrayList<Commande> getCommandeBySbire(int idLarbin) throws SQLException
+	 {
+		 boolean izOkay = false;
+		 PreparedStatement state = null;
+		ResultSet result = null;
+		ArrayList<Commande> lesCommandes = new ArrayList<Commande>();
+		 Commande laCommande = new Commande();
+		try
+		{
+			 Connection conn = AccesBase.getConnection();
+			 state = conn.prepareStatement( "Select * from commande where utilisateur = ? AND ETAT LIKE ? OR ?" );
+
+			 state.setInt( 1, idLarbin);
+			 state.setString( 2, "ECS");
+			 state.setString( 3, "ATT");
+			 
+			 ResultSetMetaData resultMeta = result.getMetaData();   
+			   
+			 while(result.next())
+			 {				
+				 laCommande.setNum(result.getInt("numCommande"));	
+				 laCommande.setEtats(result.getString("etat"));
+				 laCommande.setDate(result.getDate("dateCommande"));
+				 Personnel SBIREMAN = PersonnelDAO.getUtilisateurId(result.getInt("utilisateur"));
+				 Client ALL_HAIL_PEPITO  = ClientDAO.getClientById(result.getInt("client"));
+				 laCommande.setPepito(ALL_HAIL_PEPITO);
+				 laCommande.setLeSbire(SBIREMAN);
+				
+				 lesCommandes.add(laCommande);
+			 }
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally
+		{
+			  result.close();
+			     state.close();
+		}   
+		return lesCommandes;
+		 
 	 }
 }
