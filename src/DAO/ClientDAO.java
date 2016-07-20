@@ -109,8 +109,5 @@ public class ClientDAO {
 		}
 		return clients;
 	}
-
-	
-	
 	
 }
