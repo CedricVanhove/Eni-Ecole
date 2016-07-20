@@ -68,4 +68,14 @@
     <servlet-name>ListerEmploye</servlet-name>
     <url-pattern>/ListerEmploye</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListerArticle</display-name>
+    <servlet-name>ListerArticle</servlet-name>
+    <servlet-class>Servlet.ListerArticle</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListerArticle</servlet-name>
+    <url-pattern>/ListerArticle</url-pattern>
+  </servlet-mapping>
 </web-app>
