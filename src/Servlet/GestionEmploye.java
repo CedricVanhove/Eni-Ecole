@@ -88,5 +88,6 @@ public class GestionEmploye extends HttpServlet {
 		{
 			
 		}
+		response.sendRedirect("IHM/Manager/gestionEmploye.jsp");
 }
 }

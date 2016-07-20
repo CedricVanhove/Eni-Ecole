@@ -18,18 +18,20 @@ public class PersonnelDAO {
 		 ArrayList<Personnel> lePersonnel = new ArrayList<Personnel>();
 		Statement state = null;
 		ResultSet result = null;
+		
 		try {
 			
-			 Personnel unePersonne = new Personnel();
+		
 			 
 			 Connection conn = AccesBase.getConnection();
 			 state = conn.createStatement();
 			    
-			 result = state.executeQuery("SELECT * FROM personnel");
+			 result = state.executeQuery("SELECT * FROM utilisateur");
 			 ResultSetMetaData resultMeta = result.getMetaData();   
 			   
 			 while(result.next())
 			 {
+				 Personnel unePersonne = new Personnel();
 				 unePersonne.setNum(result.getInt("idUtilisateur")); // verif nom des colonnes
 				 unePersonne.setNom(result.getString("nom"));
 				 unePersonne.setPrenom(result.getString("prenom"));
