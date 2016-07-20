@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,7 +8,7 @@
 	
     <!-- Custom styles for this template -->
     <link href="<%=request.getContextPath()%>/css/navbar.css" rel="stylesheet">
-<title>ENI - ECF</title>
+<title>ENI - Expeditor</title>
 </head>
 <body>
  <div class="container">
@@ -29,16 +28,8 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav"> 
             <li><a href="<%=request.getContextPath()%>/formateur/accueilFormateur.jsp">Accueil</a></li>            
-              <li><a href="<%=request.getContextPath()%>/InscriptionTest">Inscription</a></li>
-               <li><a href="#">Voir les résultats</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestionnaire<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="<%=request.getContextPath()%>/ListerThemeQuestions">Questions</a></li>
-                  <li><a href="<%=request.getContextPath()%>/ListerTheme">Thèmes</a></li>
- 				  <li><a href="<%=request.getContextPath()%>/ListerTest">Test</a></li>
-              </li>              
-            </ul>
+            	<li><a href="<%=request.getContextPath()%>/InscriptionTest">Gestion article</a></li>
+            	<li><a href="#">Gestion employé</a></li>            
             </ul>
             <ul class="nav navbar-nav navbar-right">
 				<li><a href="<%=request.getContextPath()%>/deconnexion">Déconnexion</a></li>
