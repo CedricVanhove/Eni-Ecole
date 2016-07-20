@@ -14,7 +14,7 @@ import metier.DetailsCommande;
 
 public class DetailsCommandeDAO 
 {
-	public static ArrayList<DetailsCommande> getLesLignes(int id) throws SQLException
+	public static ArrayList<DetailsCommande> getLesLignes() throws SQLException
 	 {
 		 
 		 ArrayList<DetailsCommande> lesLignes = new ArrayList<DetailsCommande>();

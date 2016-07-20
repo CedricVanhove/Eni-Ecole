@@ -5,13 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<!-- Bootstrap core CSS -->
-    <link href="<%=request.getContextPath()%>/Librairies/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+    <%-- <link href="<%=request.getContextPath()%>/Librairies/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet"> --%>
+    <link href="../ressources/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
 	
     <!-- Custom styles for this template -->
-    <link href="<%=request.getContextPath()%>/css/navbar.css" rel="stylesheet">
+    <%-- <link href="<%=request.getContextPath()%>/css/navbar.css" rel="stylesheet"> --%>
+    <link href="../ressources/css/navbar.css" rel="stylesheet">
 <title>ENI - ECF</title>
 </head>
-<body>
+<body> 
 	<div class="container">
       <!-- Static navbar -->
       <nav class="navbar navbar-default">
