@@ -90,7 +90,7 @@
 												<div class="col-md-offset-0 col-md-8">
 													<input  class="btn btn-success btn btn-success" type="submit" name="bAjouter" value="Ajouter"/>
 												</div>
-											</div>								
+											</div>							
 										</form>
 								      	
 								      </div>
