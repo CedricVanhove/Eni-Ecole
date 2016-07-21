@@ -73,6 +73,7 @@ public class GestionEmploye extends HttpServlet {
 			
 			try {
 				PersonnelDAO.Insert(unePersonne);
+				//ajouter unePersonne dans lister emplouyé
 				} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
