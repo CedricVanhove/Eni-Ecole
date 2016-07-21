@@ -29,7 +29,7 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav"> 
-            <li><a href="<%=request.getContextPath()%>/formateur/accueilFormateur.jsp">Accueil</a></li>            
+            <li><a href="<%=request.getContextPath()%>/IHM/Manager/gestionCommandeManager.jsp">Accueil</a></li>            
             	<li><a href="<%=request.getContextPath()%>/ListerArticle">Gestion article</a></li>
             	<li><a href="<%=request.getContextPath()%>/ListerEmploye">Gestion employé</a></li>            
             </ul>

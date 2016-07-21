@@ -20,7 +20,7 @@
 				<div class="col-xs-12">					
 					<div class="main">							
 						<div class="row" >
-							<div class="col-xs-12 col-sm-6 col-sm-offset-1">
+							<div >
 										
 								<h1>Gestion des articles</h1>
 								<%
