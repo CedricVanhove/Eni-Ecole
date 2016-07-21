@@ -77,15 +77,14 @@ public class GestionArticle extends HttpServlet {
 		}
 		if(modifParam != null)
 		{
+			article.setNum(Integer.parseInt(id));
 			article.setLibelle(libArt);
 			article.setDescription(desc);
 			article.setPoids(pdsArt);		
 			ArticleDAO.Update(article);
-		}if(modifParam != null)
+		}if(supprimeParam != null)
 		{
-			article.setLibelle(libArt);
-			article.setDescription(desc);
-			article.setPoids(pdsArt);		
+			
 			ArticleDAO.Delete(Integer.parseInt(id));
 		}
 		response.sendRedirect("IHM/Manager/gestionArticle.jsp");

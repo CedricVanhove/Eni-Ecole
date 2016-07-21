@@ -50,7 +50,7 @@
 											<td><%=unArticle.getLibelle()%></td>
 											<td><%=unArticle.getDescription()%></td>
 											<td><%=unArticle.getPoids()%></td>			
-											<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalModif" id="ouvreModal">toto</button>
+											<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalModif" id="ouvreModal" style="display:none"></button>
 											<button type="button" class="btn btn-warning" onclick="ModifArticle(<%=unArticle.getNum() %>, '<%=unArticle.getLibelle() %>', '<%=unArticle.getDescription() %>', <%=unArticle.getPoids() %>);" >Modifier</button></td>
 							                <td><input  class="btn btn-danger" type="submit" value="Supprimer"/></td>							                
 							            </tr>
@@ -78,15 +78,15 @@
 								      	
 								      	<form class="form-horizontal col-md-12" method="post" accept-charset="utf-8" action="<%=request.getContextPath()%>/GestionArticle">
 											<div class="form-group">
-												<input name="libelleArticleAdd" placeholder="libelle" class="form-control input-md" type="text" id="libelleArticleAdd"/>
+												<input name="libelleArticle" placeholder="libelle" class="form-control input-md" type="text" id="libelleArticleAdd"/>
 											</div> 
 											
 											<div class="form-group">
-												<input name="descriptionArticle" placeholder="description" class="form-control input-md" type="text" id="descriptionArticle"/>
+												<input name="descriptionArticle" placeholder="description" class="form-control input-md" type="text" id="descriptionArticleAss"/>
 											</div>
 											
 											<div class="form-group">
-												<input name="poidsArticle" placeholder="Poids" class="form-control input-md" type="text" id="poidsArticle"/>
+												<input name="poidsArticle" placeholder="Poids" class="form-control input-md" type="text" id="poidsArticleAdd"/>
 											</div>
 											<div class="form-group">
 												<div class="col-md-offset-0 col-md-8"><input  class="btn btn-success btn btn-success" name="bAjouter" type="submit" value="Ajouter"/>
@@ -117,6 +117,7 @@
 								      	
 										
 								      	<form class="form-horizontal col-md-12" method="post" accept-charset="utf-8" action="<%=request.getContextPath()%>/GestionArticle">
+											<input type="hidden" name="idArticle" id="idArticle"/>
 											<div class="form-group">
 												<input name="libelleArticle" placeholder="libelle"  class="form-control input-md" type="text" id="libelleArticle"/>
 											</div> 
@@ -146,13 +147,13 @@
 								
 									function ModifArticle(id,libelle, description,poids)
 									{
-										console.log(document.getElementById("libelleArticle"));
+										console.log(id);
 										
 										document.getElementById('ouvreModal').click();
-										document.getElementById("libelleArticle").value="fff";
-										//document.getElementById("libelleArticle").value=libelle;
-										//document.getElementById('descriptionArticle').value=description;
-										//document.getElementById('poidsArticle').value=poids;
+										document.getElementById("idArticle").value=id;
+										document.getElementById("libelleArticle").value=libelle;
+										document.getElementById('descriptionArticle').value=description;
+										document.getElementById('poidsArticle').value=poids;
 										
 									}
 								</script>		
