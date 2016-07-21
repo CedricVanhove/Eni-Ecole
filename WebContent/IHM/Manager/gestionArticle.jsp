@@ -34,6 +34,7 @@
 							                <th>Stock</th>
 							                <th>Poids Unitaire</th>
 							                <th></th>
+							                <th></th>
 							            </tr>
 							        </thead>
 							        <tbody>
@@ -45,11 +46,12 @@
 										
 									%>
 							            <tr>
-							            	<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalModif"><%=unArticle.getNum()%></button></td>
+							            	<td><%=unArticle.getNum()%></td>
 											<td><%=unArticle.getLibelle()%></td>
 											<td><%=unArticle.getDescription()%></td>
-											<td><%=unArticle.getPoids()%></td>								                
-							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
+											<td><%=unArticle.getPoids()%></td>			
+											<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalModif">Modifier</button></td>					                
+							                <td><input  class="btn btn-danger" type="submit" value="Supprimer"/></td>							                
 							            </tr>
 							              <%
 									}
