@@ -22,7 +22,7 @@
 							<div class="col-xs-12 col-sm-6 col-sm-offset-1">
 										
 								<h1>Gestion des commandes</h1>
-								
+								<input  class="btn btn-warning" type="submit" value="Import"/>
 								<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 							        <thead>
 							            <tr>
