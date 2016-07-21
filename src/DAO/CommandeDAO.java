@@ -142,7 +142,7 @@ public class CommandeDAO
 		try
 		{
 			 Connection conn = AccesBase.getConnection();
-			 state = conn.prepareStatement( "Select * from commande where utilisateur = ? AND ETAT LIKE ? OR ?" );
+			 state = conn.prepareStatement( "Select * from commande where utilisateur = ? AND ETAT LIKE ? OR ? ORDER BY dateCommande Desc" );
 
 			 state.setInt( 1, idLarbin);
 			 state.setString( 2, "ECS");
