@@ -34,13 +34,14 @@ public class ParsingCsv {
 				{if(token.contains(";")){
 					String []mat=token.split(";");
 					for (String item : mat) {
-						//System.out.println(item);
+					
 					}
 				}if(token.contains("-")){
 					String[] adpo=token.split("-");
 					for (String addr :adpo) {
 						String [] po=adpo[1].toString().split(" ");
-						System.out.println(po[1]);
+						
+						System.out.println();
 						
 						
 					}
