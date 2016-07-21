@@ -40,7 +40,7 @@
 							        </thead>
 							        <tbody>
 							          <% 							        
-									
+									int connard;
 									for(Article unArticle : listeArticle) {
 										i=i+1;
 										
@@ -50,7 +50,8 @@
 											<td><%=unArticle.getLibelle()%></td>
 											<td><%=unArticle.getDescription()%></td>
 											<td><%=unArticle.getPoids()%></td>			
-											<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalModif">Modifier</button></td>					                
+											<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalModif" id="ouvreModal">toto</button>
+											<button type="button" class="btn btn-warning" onclick="ModifArticle(<%=unArticle.getNum() %>, '<%=unArticle.getLibelle() %>', '<%=unArticle.getDescription() %>', <%=unArticle.getPoids() %>);" >Modifier</button></td>
 							                <td><input  class="btn btn-danger" type="submit" value="Supprimer"/></td>							                
 							            </tr>
 							              <%
@@ -105,7 +106,7 @@
 								  <div class="modal-dialog">	
 								  							
 								    <!-- Modal content-->
-								    <div class="modal-content">
+								    <div class="modal-content" id="modal">
 								      <div class="modal-header">
 								        <button type="button" class="close" data-dismiss="modal">&times;</button>
 								        <h4 class="modal-title">Modification d'un article</h4>
@@ -113,21 +114,19 @@
 								      <div class="modal-body">
 								      	
 								      	<h1>Modification d'un article</h1>	
-								      	<%
-										Article modifArticle=listeArticle.get(i);
-										%>
+								      	
 										
 								      	<form class="form-horizontal col-md-12" method="post" accept-charset="utf-8" action="<%=request.getContextPath()%>/GestionArticle">
 											<div class="form-group">
-												<input name="libelleArticle" placeholder="libelle" value="<%=modifArticle.getLibelle() %>" class="form-control input-md" type="text" id="libelleArticle"/>
+												<input name="libelleArticle" placeholder="libelle"  class="form-control input-md" type="text" id="libelleArticle"/>
 											</div> 
 											
 											<div class="form-group">
-												<input name="descriptionArticle" placeholder="description" value="<%=modifArticle.getDescription() %>" class="form-control input-md" type="text" id="descriptionArticle"/>
+												<input name="descriptionArticle" placeholder="description"  class="form-control input-md" type="text" id="descriptionArticle"/>
 											</div>
 											
 											<div class="form-group">
-												<input name="poidsArticle" placeholder="Poids" value="<%=modifArticle.getPoids().toString() %>" class="form-control input-md" type="text" id="poidsArticle"/>
+												<input name="poidsArticle" placeholder="Poids"  class="form-control input-md" type="text" id="poidsArticle"/>
 											</div>
 											<div class="form-group">
 												<div class="col-md-offset-0 col-md-8"><input  class="btn btn-success btn btn-success" name="bModifier" type="submit" value="Modifier"/>
@@ -144,9 +143,18 @@
 								</div>
     								
 								<script type="text/javascript">
-									$(document).ready(function() {
-									    $('#example').DataTable();
-									} );
+								
+									function ModifArticle(id,libelle, description,poids)
+									{
+										console.log(document.getElementById("libelleArticle"));
+										
+										document.getElementById('ouvreModal').click();
+										$("#modal #libelleArticle").html="fff";
+										//document.getElementById("libelleArticle").value=libelle;
+										//document.getElementById('descriptionArticle').value=description;
+										//document.getElementById('poidsArticle').value=poids;
+										
+									}
 								</script>		
 							</div>
 						</div>						
