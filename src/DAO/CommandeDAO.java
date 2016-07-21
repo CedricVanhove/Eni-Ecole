@@ -108,7 +108,7 @@ public class CommandeDAO
 		 return izOkay;
 	 }
 	 
-	 public static boolean ComptonsLesMoutons(int idLarbin)
+	 public static boolean countparjouretparsbire()
 	 {
 		 boolean izOkay = false;
 		 PreparedStatement state = null;
@@ -117,9 +117,8 @@ public class CommandeDAO
 		try
 		{
 			 Connection conn = AccesBase.getConnection();
-			 state = conn.prepareStatement( "Select count(*),dateComande from  commande where utilisateur = ? and etat ='FIN' group by dateCommande" );
-
-			 state.setInt( 1, idLarbin);
+			 state = conn.prepareStatement( "Select count(*),dateComande from  commande where etat ='FIN' order by dateCommande,utilisateur" );
+	
 			
 			 
 			 int statut = state.executeUpdate();
@@ -142,7 +141,7 @@ public class CommandeDAO
 		try
 		{
 			 Connection conn = AccesBase.getConnection();
-			 state = conn.prepareStatement( "Select * from commande where utilisateur = ? AND ETAT LIKE ? OR ?" );
+			 state = conn.prepareStatement( "Select * from commande where ETAT LIKE ? OR ? group by utilisateur" );
 
 			 state.setInt( 1, idLarbin);
 			 state.setString( 2, "ECS");
