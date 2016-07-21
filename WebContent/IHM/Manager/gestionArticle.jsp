@@ -78,7 +78,7 @@
 								      	
 								      	<form class="form-horizontal col-md-12" method="post" accept-charset="utf-8" action="<%=request.getContextPath()%>/GestionArticle">
 											<div class="form-group">
-												<input name="libelleArticle" placeholder="libelle" class="form-control input-md" type="text" id="libelleArticle"/>
+												<input name="libelleArticleAdd" placeholder="libelle" class="form-control input-md" type="text" id="libelleArticleAdd"/>
 											</div> 
 											
 											<div class="form-group">
@@ -149,7 +149,7 @@
 										console.log(document.getElementById("libelleArticle"));
 										
 										document.getElementById('ouvreModal').click();
-										$("#modal #libelleArticle").html="fff";
+										document.getElementById("libelleArticle").value="fff";
 										//document.getElementById("libelleArticle").value=libelle;
 										//document.getElementById('descriptionArticle').value=description;
 										//document.getElementById('poidsArticle').value=poids;
