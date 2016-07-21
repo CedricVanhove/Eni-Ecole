@@ -25,6 +25,7 @@
 								<h1>Gestion des articles</h1>
 								<%
 										ArrayList<Article> listeArticle=(ArrayList<Article>)request.getSession().getAttribute("ListerArticle");
+										int i=0;
 									%>
 								<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 							        <thead>
@@ -38,9 +39,8 @@
 							            </tr>
 							        </thead>
 							        <tbody>
-							          <% 
-							        int i=0;
-									String name="";
+							          <% 							        
+									
 									for(Article unArticle : listeArticle) {
 										i=i+1;
 										
@@ -54,6 +54,7 @@
 							                <td><input  class="btn btn-danger" type="submit" value="Supprimer"/></td>							                
 							            </tr>
 							              <%
+							              
 									}
 									%>
 									</tbody>
@@ -112,21 +113,24 @@
 								      <div class="modal-body">
 								      	
 								      	<h1>Modification d'un article</h1>	
-								      	
+								      	<%
+										Article modifArticle=listeArticle.get(i);
+										%>
+										
 								      	<form class="form-horizontal col-md-12" method="post" accept-charset="utf-8" action="<%=request.getContextPath()%>/GestionArticle">
 											<div class="form-group">
-												<input name="libelleArticle" placeholder="<%=i%>" class="form-control input-md" type="text" id="libelleArticle"/>
+												<input name="libelleArticle" placeholder="libelle" value="<%=modifArticle.getLibelle() %>" class="form-control input-md" type="text" id="libelleArticle"/>
 											</div> 
 											
 											<div class="form-group">
-												<input name="descriptionArticle" placeholder="description" class="form-control input-md" type="text" id="descriptionArticle"/>
+												<input name="descriptionArticle" placeholder="description" value="<%=modifArticle.getDescription() %>" class="form-control input-md" type="text" id="descriptionArticle"/>
 											</div>
 											
 											<div class="form-group">
-												<input name="poidsArticle" placeholder="Poids" class="form-control input-md" type="text" id="poidsArticle"/>
+												<input name="poidsArticle" placeholder="Poids" value="<%=modifArticle.getPoids().toString() %>" class="form-control input-md" type="text" id="poidsArticle"/>
 											</div>
 											<div class="form-group">
-												<div class="col-md-offset-0 col-md-8"><input  class="btn btn-success btn btn-success" name="bAjouter" type="submit" value="Ajouter"/>
+												<div class="col-md-offset-0 col-md-8"><input  class="btn btn-success btn btn-success" name="bModifier" type="submit" value="Modifier"/>
 												</div>
 											</div>
 						      			</form>
