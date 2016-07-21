@@ -63,9 +63,8 @@ public class GestionArticle extends HttpServlet {
 		String supprimeParam = request.getParameter("bSupprimer");
 		
 		String libArt = request.getParameter("libelleArticle");
-		String stkArt = request.getParameter("stockArticle");
 		String pdsArt =  request.getParameter("poidsArticle");
-		String desc = request.getParameter("description");
+		String desc = request.getParameter("descriptionArticle");
 		String id = request.getParameter("idArticle");
 		Article article = new Article();
 		
@@ -89,5 +88,6 @@ public class GestionArticle extends HttpServlet {
 			article.setPoids(pdsArt);		
 			ArticleDAO.Delete(Integer.parseInt(id));
 		}
+		response.sendRedirect("IHM/Manager/gestionEmploye.jsp");
 }
 }

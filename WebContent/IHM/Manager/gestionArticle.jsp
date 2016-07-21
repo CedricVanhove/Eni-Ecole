@@ -72,24 +72,27 @@
 								      	
 								      	<h1>Ajout d'un article</h1>	
 								      	
-								      	<form class="form-horizontal col-md-12" action="">
+								      	<form class="form-horizontal col-md-12" method="post" accept-charset="utf-8" action="<%=request.getContextPath()%>/GestionArticle">
 											<div class="form-group">
-												<input name="libelleArticle" placeholder="libelle" class="form-control" type="text" id="libelleArticle"/>
+												<input name="libelleArticle" placeholder="libelle" class="form-control input-md" type="text" id="libelleArticle"/>
 											</div> 
 											
 											<div class="form-group">
-												<input name="stockArticle" placeholder="Stock" class="form-control" type="password" id="stockArticle"/>
+												<input name="descriptionArticle" placeholder="description" class="form-control input-md" type="text" id="descriptionArticle"/>
 											</div>
 											
 											<div class="form-group">
-												<input name="poidsArticle" placeholder="Poids" class="form-control" type="password" id="poidsArticle"/>
+												<input name="poidsArticle" placeholder="Poids" class="form-control input-md" type="text" id="poidsArticle"/>
+											</div>
+											<div class="form-group">
+												<div class="col-md-offset-0 col-md-8"><input  class="btn btn-success btn btn-success" name="bAjouter" type="submit" value="Ajouter"/>
+												</div>
 											</div>
 						      			</form>
 						      			
 								      </div>
 								      <div class="modal-footer">
-								        <button type="button" name="bAjouter" value="bAjouter" class="btn btn-success" data-dismiss="modal">Valider</button>
-								        <button type="button" name="bAnnuler" value="bAnnuler" class="btn btn-default" data-dismiss="modal">Annuler</button>
+								       
 								      </div>
 								    </div>
 								  </div>
