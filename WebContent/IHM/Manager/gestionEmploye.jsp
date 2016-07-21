@@ -93,7 +93,7 @@
 											</div>
 											
 											<div class="form-group">
-										<div class="col-md-offset-0 col-md-8"><input  class="btn btn-success btn btn-success" name="bAjouter" type="submit" value="Connexion"/></div>
+										<div class="col-md-offset-0 col-md-8"><input  class="btn btn-success btn btn-success" name="bAjouter" type="submit" value="Ajouter"/></div>
 										</div>	
 						      			</form>
 						      			

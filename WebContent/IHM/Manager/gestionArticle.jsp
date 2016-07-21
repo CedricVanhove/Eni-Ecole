@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ include file="../include/headerManager.jsp"%> 
+<%@ page  import ="metier.*, java.util.*, java.text.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -22,7 +23,9 @@
 							<div class="col-xs-12 col-sm-6 col-sm-offset-1">
 										
 								<h1>Gestion des articles</h1>
-								
+								<%
+										ArrayList<Article> listeArticle=(ArrayList<Article>)request.getSession().getAttribute("ListerArticle");
+									%>
 								<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 							        <thead>
 							            <tr>
@@ -34,34 +37,23 @@
 							            </tr>
 							        </thead>
 							        <tbody>
+							          <% 
+							        int i=0;
+									String name="";
+									for(Article unArticle : listeArticle) {
+										i=i+1;
+										
+									%>
 							            <tr>
-							                <th>001</th>
-							                <th>Disque dur 2'5</th>
-							                <th>99999</th>
-							                <th>150</th>
+							            	<td><%=unArticle.getNum()%></td>
+											<td><%=unArticle.getLibelle()%></td>
+											<td><%=unArticle.getDescription()%></td>
+											<td><%=unArticle.getPoids()%></td>								                
 							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
 							            </tr>
-							            <tr>
-							                <th>002</th>
-							                <th>Carte graphique</th>
-							                <th>99999</th>
-							                <th>150</th>
-							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
-							            </tr>
-							            <tr>
-							                <th>003</th>
-							                <th>Carte Mére</th>
-							                <th>99999</th>
-							                <th>200</th>
-							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
-							            </tr>
-							            <tr>
-							                <th>004</th>
-							                <th>Alimentation</th>
-							                <th>99999</th>
-							                <th>300</th>
-							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
-							            </tr>
+							              <%
+									}
+									%>
 									</tbody>
     							</table>
     							

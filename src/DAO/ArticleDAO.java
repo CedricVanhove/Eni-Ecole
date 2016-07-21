@@ -20,7 +20,7 @@ public class ArticleDAO
 	ResultSet result = null;
 	try {
 		
-		 Article lArticle = new Article();
+		 Article lArticle;
 		 
 		 Connection conn = AccesBase.getConnection();
 		 state = conn.createStatement();
@@ -30,6 +30,7 @@ public class ArticleDAO
 		   
 		 while(result.next())
 		 {
+			 lArticle = new Article();
 			 lArticle.setNum(result.getInt("idArticle")); // verif nom des colonnes
 			 lArticle.setLibelle(result.getString("libelle"));
 			 lArticle.setDescription(result.getString("description"));
