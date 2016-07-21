@@ -88,6 +88,6 @@ public class GestionArticle extends HttpServlet {
 			article.setPoids(pdsArt);		
 			ArticleDAO.Delete(Integer.parseInt(id));
 		}
-		response.sendRedirect("IHM/Manager/gestionEmploye.jsp");
+		response.sendRedirect("IHM/Manager/gestionArticle.jsp");
 }
 }
