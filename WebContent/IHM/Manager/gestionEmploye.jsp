@@ -53,9 +53,12 @@
 											<td><%=unePersonne.getPrenom()%></td>
 											<td><%=unePersonne.getLogin()%></td>											
 							                <td><input type="checkbox" name="managerCheckbox" id="managerCheckbox" value="<%=i%>"></td>
-							                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalModif">Modifier</button></td>
+							                <td><button id="ouvreModal" type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalModif">d</button>
+							                <button type="button" class="btn btn-warning" onclick="ModifPersonne(<%=unePersonne.getNum() %>, '<%=unePersonne.getNom() %>', '<%=unePersonne.getPrenom() %>', <%=unePersonne.getLogin() %>);" >Modifier</button></td>
 							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
+							               
 							            </tr>
+							            
 							        <%
 									}
 									%>
@@ -86,9 +89,7 @@
 											<div class="form-group">
 												<input name="loginEmp" placeholder="Login" class="form-control input-md" type="text" id="loginEmp"/>
 											</div>
-											<div class="form-group">
-												<input name="mdpEmp" placeholder="Mdp" class="form-control input-md" type="text" id="Mdp"/>
-											</div>
+											
 											<div class="form-group">
 												<INPUT type="checkbox" name="managerCheckbox" value="3" >
 											</div>
@@ -120,22 +121,26 @@
 								      	
 								      	<h1>Modification d'un article</h1>	
 								      	
-								      	<form class="form-horizontal col-md-12" method="post" accept-charset="utf-8" action="<%=request.getContextPath()%>/GestionArticle">
+								      		<form class="form-horizontal col-md-12" method="post" accept-charset="utf-8" action="<%=request.getContextPath()%>/GestionEmploye">
 											<div class="form-group">
-												<input name="libelleArticle" placeholder="<%=i%>" class="form-control input-md" type="text" id="libelleArticle"/>
-											</div> 
-											
+											  	<input name="nomEmpModif" placeholder="Nom" class="form-control input-md" type="text" id="nomEmpModif"/>
+											</div>
 											<div class="form-group">
-												<input name="descriptionArticle" placeholder="description" class="form-control input-md" type="text" id="descriptionArticle"/>
+												<input name="prenomEmpModif" placeholder="Prenom" class="form-control input-md" type="text" id="prenomEmpModif"/>
+											</div>
+											<div class="form-group">
+												<input name="loginEmpModif" placeholder="Login" class="form-control input-md" type="text" id="loginEmpModif"/>
+											</div>
+											<div class="form-group">
+												<input name="mdpEmpModif" placeholder="Mdp" class="form-control input-md" type="text" id="mdpEmpModif"/>
+											</div>
+											<div class="form-group">
+												<INPUT type="checkbox" name="managerCheckbox" value="3" >
 											</div>
 											
 											<div class="form-group">
-												<input name="poidsArticle" placeholder="Poids" class="form-control input-md" type="text" id="poidsArticle"/>
-											</div>
-											<div class="form-group">
-												<div class="col-md-offset-0 col-md-8"><input  class="btn btn-success btn btn-success" name="bAjouter" type="submit" value="Ajouter"/>
-												</div>
-											</div>
+										<div class="col-md-offset-0 col-md-8"><input  class="btn btn-success btn btn-success" name="bAjouter" type="submit" value="Ajouter"/></div>
+										</div>	
 						      			</form>
 						      			
 								      </div>
@@ -146,11 +151,19 @@
 								  </div>
 								</div>
 								
-								<!--  <script type="text/javascript">
-									$(document).ready(function() {
-									    $('#example').DataTable();
-									} );
-								</script>-->
+								 <script type="text/javascript">
+								 function ModifPersonne(id,nom, prenom,login)
+									{
+										
+										
+										document.getElementById('ouvreModal').click();
+										document.getElementById("libelleArticle").value=id;
+										document.getElementById("nomEmpModif").value=nom;
+										document.getElementById('loginEmpModif').value=prenom;
+										
+										
+									}
+								</script>
 							</div>
 						</div>						
 					</div>				
