@@ -9,7 +9,7 @@ public class Commande {
 	private String description;
 	private String poids;
 	private String Etats;
-	private java.sql.Date laDate;
+	private String laDate;
 	private ArrayList<DetailsCommande> lesLignes;
 	private Personnel leSbire;
 	private Client Pepito;
@@ -43,10 +43,10 @@ public class Commande {
 	public void setEtats(String etats) {
 		Etats = etats;
 	}
-	public Date getDate() {
+	public String getDate() {
 		return laDate;
 	} 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		laDate = date;
 	}
 	public ArrayList<DetailsCommande> getLesArticles() {
@@ -68,7 +68,7 @@ public class Commande {
 		Pepito = pepito;
 	}
 	public Commande(int num, String libelle, String description,
-			String poids, String etats, Date date,
+			String poids, String etats, String date,
 			ArrayList<DetailsCommande> lesArticles, Personnel leSbire, Client pepito) {
 		super();
 		this.num = num;

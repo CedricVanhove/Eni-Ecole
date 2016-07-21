@@ -37,7 +37,7 @@ public class CommandeDAO
 			 {				
 				 laCommande.setNum(result.getInt("numCommande"));	
 				 laCommande.setEtats(result.getString("etat"));
-				 laCommande.setDate(result.getDate("dateCommande"));
+				 laCommande.setDate(result.getString("dateCommande"));
 				 Personnel SBIREMAN = PersonnelDAO.getUtilisateurId(result.getInt("utilisateur"));
 				 Client ALL_HAIL_PEPITO  = ClientDAO.getClientById(result.getInt("client"));
 				 laCommande.setPepito(ALL_HAIL_PEPITO);
@@ -68,7 +68,7 @@ public class CommandeDAO
 			 state = conn.prepareStatement( "INSERT INTO commande (etat, dateCommande, client,utilisateur) VALUES(?, ?, ?,?);" );
 
 			 state.setString( 1, "ATT");
-			 state.setDate( 2, item.getDate());
+			 state.setString ( 2, item.getDate());
 			 state.setInt( 3, item.getPepito().getId() );
 			 state.setInt( 4, item.getLeSbire().getNum() );
 			 int statut = state.executeUpdate();
@@ -154,7 +154,7 @@ public class CommandeDAO
 			 {				
 				 laCommande.setNum(result.getInt("numCommande"));	
 				 laCommande.setEtats(result.getString("etat"));
-				 laCommande.setDate(result.getDate("dateCommande"));
+				 laCommande.setDate(result.getString("dateCommande"));
 				 Personnel SBIREMAN = PersonnelDAO.getUtilisateurId(result.getInt("utilisateur"));
 				 Client ALL_HAIL_PEPITO  = ClientDAO.getClientById(result.getInt("client"));
 				 laCommande.setPepito(ALL_HAIL_PEPITO);
