@@ -67,7 +67,7 @@ public class CommandeDAO
 			 Connection conn = AccesBase.getConnection();
 			 state = conn.prepareStatement( "INSERT INTO commande (etat, dateCommande, client,utilisateur) VALUES(?, ?, ?,?);" );
 
-			 state.setString( 1, "ECS");
+			 state.setString( 1, "ATT");
 			 state.setDate( 2, item.getDate());
 			 state.setInt( 3, item.getPepito().getId() );
 			 state.setInt( 4, item.getLeSbire().getNum() );
