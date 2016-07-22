@@ -156,12 +156,13 @@ public class PersonnelDAO {
 		try
 		{
 			 Connection conn = AccesBase.getConnection();
-			 state = conn.prepareStatement( "Update utilisateur set nom=?,prenom=?,login=?,estManager=?" );
+			 state = conn.prepareStatement( "Update utilisateur set nom=?,prenom=?,login=?,estManager=? WHERE idUtilisateur = ? " );
 			 state.setString( 1, item.getNom());
 			  state.setString( 2, item.getPrenom());
 			  state.setString( 3, item.getLogin() );
 			
 			  state.setBoolean(4, item.isEstManager() );
+			  state.setInt(5, item.getNum() );
 
 			 
 
