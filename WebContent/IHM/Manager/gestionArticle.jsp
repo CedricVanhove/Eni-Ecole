@@ -86,7 +86,7 @@
 											</div>
 											
 											<div class="form-group">
-												<input name="poidsArticle" placeholder="Poids" class="form-control input-md" type="text" id="poidsArticleAdd"/>
+												<input name="poidsArticle" placeholder="Poids" class="form-control input-md" type="number" id="poidsArticleAdd"/>
 											</div>
 											<div class="form-group">
 												<div class="col-md-offset-0 col-md-8"><input  class="btn btn-success btn btn-success" name="bAjouter" type="submit" value="Ajouter"/>
@@ -127,7 +127,7 @@
 											</div>
 											
 											<div class="form-group">
-												<input name="poidsArticle" placeholder="Poids"  class="form-control input-md" type="text" id="poidsArticle"/>
+												<input name="poidsArticle" placeholder="Poids"  class="form-control input-md" type="number" id="poidsArticle"/>
 											</div>
 											<div class="form-group">
 												<div class="col-md-offset-0 col-md-8"><input  class="btn btn-success btn btn-success" name="bModifier" type="submit" value="Modifier"/>
