@@ -32,7 +32,7 @@
 							            <tr>
 							                <th>ID Article</th>
 							                <th>Libelle</th>
-							                <th>Stock</th>
+							                <th>Description</th>
 							                <th>Poids Unitaire</th>
 							                <th></th>							            
 							            </tr>
@@ -49,7 +49,7 @@
 											<td><%=unArticle.getLibelle()%></td>
 											<td><%=unArticle.getDescription()%></td>
 											<td><%=unArticle.getPoids()%></td>			
-											<td><button type="button" data-toggle="modal" data-target="#myModalModif" id="ouvreModal" style="display:none"></button>
+											<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalModif" id="ouvreModal" style="display:none"></button>
 											<button type="button" class="btn btn-warning" onclick="ModifArticle(<%=unArticle.getNum() %>, '<%=unArticle.getLibelle() %>', '<%=unArticle.getDescription() %>', <%=unArticle.getPoids() %>);" >Modifier</button></td>
 							                						                
 							            </tr>
@@ -117,6 +117,7 @@
 										
 								      	<form class="form-horizontal col-md-12" method="post" accept-charset="utf-8" action="<%=request.getContextPath()%>/GestionArticle">
 											<input type="hidden" name="idArticle" id="idArticle"/>
+											<input type="hidden" name="objetArticle" id="objetArticle"/>
 											<div class="form-group">
 												<input name="libelleArticle" placeholder="libelle"  class="form-control input-md" type="text" id="libelleArticle"/>
 											</div> 
@@ -126,7 +127,7 @@
 											</div>
 											
 											<div class="form-group">
-												<input name="poidsArticle" placeholder="Poids"  class="form-control input-md" type="number" id="poidsArticle"/>
+												<input name="poidsArticle" placeholder="Poids"  class="form-control input-md" type="text" id="poidsArticle"/>
 											</div>
 											<div class="form-group">
 												<div class="col-md-offset-0 col-md-8"><input  class="btn btn-success btn btn-success" name="bModifier" type="submit" value="Modifier"/>

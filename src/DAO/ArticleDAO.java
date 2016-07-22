@@ -164,4 +164,18 @@ public class ArticleDAO
 	return lArticle;
 	 
  }
+ 
+ public static Article rechercherUnArticleParId(int id,ArrayList<Article> lesArticles)
+	{
+		Article article=null;
+		for(Article unArticle :lesArticles)
+		{
+			if(unArticle.getNum()==id)
+			{
+				article=unArticle;
+				break;
+			}
+		}
+		return article;
+	}
 }

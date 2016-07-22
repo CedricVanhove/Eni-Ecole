@@ -1,5 +1,9 @@
 package metier;
 
+import java.util.ArrayList;
+
+import sun.invoke.empty.Empty;
+
 public class Article {
 	private int num;
 	 private String libelle;
@@ -50,7 +54,8 @@ public class Article {
 		super();
 	}
 	 
-	 
+	
+	
 	 
 	 
 	 

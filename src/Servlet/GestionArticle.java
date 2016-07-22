@@ -66,6 +66,7 @@ public class GestionArticle extends HttpServlet {
 		String pdsArt =  request.getParameter("poidsArticle");
 		String desc = request.getParameter("descriptionArticle");
 		String id = request.getParameter("idArticle");
+	
 		Article article = new Article();
 		ArrayList<Article> lesArticles=(ArrayList<Article>) request.getSession().getAttribute("ListerArticle");
 		int indexArticle;
@@ -87,7 +88,8 @@ public class GestionArticle extends HttpServlet {
 		}
 		if(modifParam != null)
 		{
-			indexArticle=lesArticles.indexOf(article);
+			Article articleCourant=ArticleDAO.rechercherUnArticleParId(Integer.parseInt(id), lesArticles);
+			indexArticle=lesArticles.indexOf(articleCourant);
 			article.setNum(Integer.parseInt(id));
 			article.setLibelle(libArt);
 			article.setDescription(desc);
@@ -96,9 +98,9 @@ public class GestionArticle extends HttpServlet {
 			lesArticles.set(indexArticle, article);
 		}if(supprimeParam != null)
 		{
-			
+			Article articleCourant=ArticleDAO.rechercherUnArticleParId(Integer.parseInt(id), lesArticles);
 			ArticleDAO.Delete(Integer.parseInt(id));
-			lesArticles.remove(article);
+			lesArticles.remove(articleCourant);
 		}
 		response.sendRedirect("IHM/Manager/gestionArticle.jsp");
 		//dispatcher = getServletContext().getRequestDispatcher(request.getContextPath()+"/IHM/Manager/gestionArticle.jsp");
