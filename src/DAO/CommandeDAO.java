@@ -31,7 +31,7 @@ public class CommandeDAO
 			 state = conn.createStatement();
 			    
 			 result = state.executeQuery("SELECT * FROM Commande ORDER BY DATE");
-			 ResultSetMetaData resultMeta = result.getMetaData();   
+			   
 			   
 			 while(result.next())
 			 {				
@@ -108,29 +108,30 @@ public class CommandeDAO
 		 return izOkay;
 	 }
 	 
-	 public static boolean ComptonsLesMoutons(int idLarbin)
+	 public static int count()
 	 {
 		 boolean izOkay = false;
 		 PreparedStatement state = null;
 		ResultSet result = null;
-		
+		int res= 0;
 		try
 		{
 			 Connection conn = AccesBase.getConnection();
-			 state = conn.prepareStatement( "Select count(*),dateComande from  commande where  = ? and etat ='FIN' group by dateCommande" );
+			 state = conn.prepareStatement( "Select count(*) as lecount from  commande where   etat ='FIN' grouo by dateCommande,utilisateur" );
 
-			 state.setInt( 1, idLarbin);
-			
-			 
-			 int statut = state.executeUpdate();
-			 if(statut > 0 ) izOkay = true;
+			 while(result.next())
+			 {				
+				 res=(result.getInt("lecount"));	
+				
+				
+			 }
 		}
 		catch( Exception ex)
 		{
-			izOkay = false;
+			res = -1;
 		}
 		
-		 return izOkay;
+		 return res;
 	 }
 	 public static ArrayList<Commande> getCommandeBySbire(int idLarbin) throws SQLException
 	 {

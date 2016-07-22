@@ -49,15 +49,16 @@ public class GestionEmploye extends HttpServlet {
 		String modifParam = request.getParameter("bModifier");
 		String supprimeParam = request.getParameter("bSupprimer");
 		
-		String nom = request.getParameter("nomEmp");
-		String prenom = request.getParameter("prenomEmp");
-		String login =  request.getParameter("loginEmp");
-		String mdp =  request.getParameter("mdpEmp");
-		String estManager =  request.getParameter("managerCheckbox");
+		
 		Personnel unePersonne = new Personnel();
 		
 		if(ajouterParam != null)
 		{
+			String nom = request.getParameter("nomEmp");
+			String prenom = request.getParameter("prenomEmp");
+			String login =  request.getParameter("loginEmp");
+			String mdp =  request.getParameter("mdpEmp");
+			String estManager =  request.getParameter("managerCheckbox");
 			unePersonne.setNom(nom);
 			unePersonne.setPrenom(prenom);
 			unePersonne.setLogin(login);
@@ -82,7 +83,32 @@ public class GestionEmploye extends HttpServlet {
 		
 		if(modifParam != null)
 		{
+			String nom = request.getParameter("nomEmpModif");
+			String prenom = request.getParameter("prenomEmpModif");
+			String login =  request.getParameter("loginEmpModif");
+			String idnul =  request.getParameter("monId");
+			String estManager =  request.getParameter("managerCheckboxmodif");
+			unePersonne.setNom(nom);
+			unePersonne.setPrenom(prenom);
+			unePersonne.setLogin(login);
+			unePersonne.setNum(Integer.parseInt(idnul));
 			
+			if(estManager != null) 
+			{
+				unePersonne.setEstManager(true);
+			}
+			else
+			{
+				unePersonne.setEstManager(false);
+			}
+			
+			try {
+				PersonnelDAO.Update(unePersonne);
+				//ajouter unePersonne dans lister emplouyé
+				} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}		
 		
 		if(supprimeParam != null)
