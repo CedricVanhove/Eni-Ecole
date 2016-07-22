@@ -82,8 +82,9 @@ public class GestionArticle extends HttpServlet {
 			article.setDescription(desc);
 			article.setPoids(pdsArt);		
 			ArticleDAO.Insert(article);
-			lesArticles.add(article);
+			
 			article.setNum(lesArticles.get(lesArticles.size()-1).getNum() +1);
+			lesArticles.add(article);
 			request.getSession().setAttribute("ListerArticle",lesArticles);
 		}
 		if(modifParam != null)

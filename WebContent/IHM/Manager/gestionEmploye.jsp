@@ -20,7 +20,7 @@
 				<div class="col-xs-12">					
 					<div class="main">							
 						<div class="row" >
-							<div class="col-xs-12 col-sm-6 col-sm-offset-1">
+							<div >
 										
 								<h1>Liste des employés</h1>
 									<%
@@ -35,8 +35,7 @@
 							                <th>Login</th>
 							                <th>Manager</th>
 							                <th></th>
-							                <th></th>
-							            </tr>
+							             </tr>
 							        </thead>
 							        <tbody>
 							        <% 
@@ -52,11 +51,20 @@
 											<td><%=unePersonne.getNom()%></td>
 											<td><%=unePersonne.getPrenom()%></td>
 											<td><%=unePersonne.getLogin()%></td>											
-							                <td><input type="checkbox" name="managerCheckbox" id="managerCheckbox" value="<%=i%>"></td>
-							                <td><button id="ouvreModal" type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalModif">d</button>
+							                <td><%
+							                if(unePersonne.isEstManager())
+							                {%>  
+							                	Oui
+							                <%}
+							                else
+							                { %>
+							                	Non <%
+							                }
+							                %>
+							                </td>
+							                <td><button id="ouvreModal" type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalModif" style="display:none"></button>
 							                <button type="button" class="btn btn-warning" onclick="ModifPersonne(<%=unePersonne.getNum() %>, '<%=unePersonne.getNom() %>', '<%=unePersonne.getPrenom() %>', '<%=unePersonne.getLogin() %>');" >Modifier</button></td>
-							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
-							               
+							               							               
 							            </tr>
 							            
 							        <%
@@ -120,8 +128,9 @@
 								      <div class="modal-body">
 								      	
 								      	<h1>Modification d'un employé</h1>	
-								      	
+								      
 								      		<form class="form-horizontal col-md-12" method="post" accept-charset="utf-8" action="<%=request.getContextPath()%>/GestionEmploye">
+												<input type="hidden" name="idPersonnel" id="idPersonnel"/>
 											<div class="form-group">
 											  	<input name="nomEmpModif" placeholder="Nom" class="form-control input-md" type="text" id="nomEmpModif"/>
 											</div>
@@ -159,7 +168,7 @@
 										document.getElementById("nomEmpModif").value=nom;
 										document.getElementById('prenomEmpModif').value=prenom;
 										document.getElementById("nomEmpModif").value=nom;
-										document.getElementById("monId").value=id;
+										document.getElementById("idPersonnel").value=id;
 										console.log(document.getElementById("monId").value);
 										
 									}

@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import metier.Article;
 import metier.Personnel;
 
 public class PersonnelDAO {
@@ -36,6 +37,7 @@ public class PersonnelDAO {
 				 unePersonne.setNom(result.getString("nom"));
 				 unePersonne.setPrenom(result.getString("prenom"));
 				 unePersonne.setLogin(result.getString("login"));
+				 unePersonne.setEstManager(result.getBoolean("estManager"));
 				lePersonnel.add(unePersonne);
 				 
 			 }
@@ -222,5 +224,19 @@ public class PersonnelDAO {
 		
 			
 			return Pepito;
+		}
+	 
+	 public static Personnel rechercherPepitoParId(int id,ArrayList<Personnel> lePersonnel)
+		{
+			Personnel personne=null;
+			for(Personnel unePersonne :lePersonnel)
+			{
+				if(unePersonne.getNum()==id)
+				{
+					personne=unePersonne;
+					break;
+				}
+			}
+			return personne;
 		}
 }

@@ -117,7 +117,7 @@
 										
 								      	<form class="form-horizontal col-md-12" method="post" accept-charset="utf-8" action="<%=request.getContextPath()%>/GestionArticle">
 											<input type="hidden" name="idArticle" id="idArticle"/>
-											<input type="hidden" name="objetArticle" id="objetArticle"/>
+											
 											<div class="form-group">
 												<input name="libelleArticle" placeholder="libelle"  class="form-control input-md" type="text" id="libelleArticle"/>
 											</div> 

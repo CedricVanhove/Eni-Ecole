@@ -2,6 +2,7 @@ package Servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,7 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DAO.ArticleDAO;
 import DAO.PersonnelDAO;
+import metier.Article;
 import metier.Personnel;
 
 /**
@@ -49,7 +52,8 @@ public class GestionEmploye extends HttpServlet {
 		String modifParam = request.getParameter("bModifier");
 		String supprimeParam = request.getParameter("bSupprimer");
 		
-		
+		ArrayList<Personnel> lePersonnel=(ArrayList<Personnel>) request.getSession().getAttribute("ListerEmploye");
+		int indexPersonne;
 		Personnel unePersonne = new Personnel();
 		
 		if(ajouterParam != null)
@@ -74,6 +78,10 @@ public class GestionEmploye extends HttpServlet {
 			
 			try {
 				PersonnelDAO.Insert(unePersonne);
+				
+				unePersonne.setNum(lePersonnel.get(lePersonnel.size()-1).getNum() +1);
+				lePersonnel.add(unePersonne);
+				//request.getSession().setAttribute("ListerPersonne",lePersonnel);
 				//ajouter unePersonne dans lister emplouyé
 				} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -82,12 +90,16 @@ public class GestionEmploye extends HttpServlet {
 		}
 		
 		if(modifParam != null)
-		{
+		{	
+			
 			String nom = request.getParameter("nomEmpModif");
 			String prenom = request.getParameter("prenomEmpModif");
 			String login =  request.getParameter("loginEmpModif");
-			String idnul =  request.getParameter("monId");
+			String idnul =  request.getParameter("idPersonnel");
 			String estManager =  request.getParameter("managerCheckboxmodif");
+			
+			Personnel personnelCourant=PersonnelDAO.rechercherPepitoParId(Integer.parseInt(idnul), lePersonnel);
+			indexPersonne=lePersonnel.indexOf(personnelCourant);
 			unePersonne.setNom(nom);
 			unePersonne.setPrenom(prenom);
 			unePersonne.setLogin(login);
@@ -104,6 +116,7 @@ public class GestionEmploye extends HttpServlet {
 			
 			try {
 				PersonnelDAO.Update(unePersonne);
+				lePersonnel.set(indexPersonne, unePersonne);
 				//ajouter unePersonne dans lister emplouyé
 				} catch (SQLException e) {
 				// TODO Auto-generated catch block
