@@ -1,10 +1,18 @@
 package Servlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import metier.Article;
+import metier.Commande;
+import DAO.ArticleDAO;
 
 /**
  * Servlet implementation class GestionCommande
@@ -24,14 +32,72 @@ public class GestionCommande extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		try {
+			valider(request, response);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		try {
+			valider(request, response);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
+	protected void valider(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
 
+     	RequestDispatcher dispatcher;
+     	String ajouterParam = request.getParameter("bAjouter"); 
+		String modifParam = request.getParameter("bModifier");
+		String supprimeParam = request.getParameter("bSupprimer");
+		
+	/*	String libArt = request.getParameter("libelleArticle");
+		String pdsArt =  request.getParameter("poidsArticle");
+		String desc = request.getParameter("descriptionArticle");
+		String id = request.getParameter("idArticle");
+		Commande commande = new Commande();
+		ArrayList<Article> lesArticles=(ArrayList<Article>) request.getSession().getAttribute("ListerArticle");
+		int indexArticle;
+		
+		if(ajouterParam != null)
+		{
+			
+			if (lesArticles.isEmpty())
+			{
+				lesArticles= new ArrayList<Article>();
+			}
+			article.setLibelle(libArt);
+			article.setDescription(desc);
+			article.setPoids(pdsArt);		
+			ArticleDAO.Insert(article);
+			lesArticles.add(article);
+			article.setNum(lesArticles.get(lesArticles.size()-1).getNum() +1);
+			request.getSession().setAttribute("ListerArticle",lesArticles);
+		}
+		if(modifParam != null)
+		{
+			indexArticle=lesArticles.indexOf(article);
+			article.setNum(Integer.parseInt(id));
+			article.setLibelle(libArt);
+			article.setDescription(desc);
+			article.setPoids(pdsArt);		
+			ArticleDAO.Update(article);
+			lesArticles.set(indexArticle, article);
+		}if(supprimeParam != null)
+		{
+			
+			ArticleDAO.Delete(Integer.parseInt(id));
+			lesArticles.remove(article);
+		}
+		response.sendRedirect("IHM/Manager/gestionArticle.jsp");*/
+		//dispatcher = getServletContext().getRequestDispatcher(request.getContextPath()+"/IHM/Manager/gestionArticle.jsp");
+		//dispatcher.forward(request, response);
+}
 }

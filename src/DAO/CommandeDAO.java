@@ -40,6 +40,9 @@ public class CommandeDAO
 				 laCommande.setDate(result.getString("dateCommande"));
 				 Personnel SBIREMAN = PersonnelDAO.getUtilisateurId(result.getInt("utilisateur"));
 				 Client ALL_HAIL_PEPITO  = ClientDAO.getClientById(result.getInt("client"));
+				 ArrayList<DetailsCommande> details = new ArrayList<DetailsCommande>();
+				 details = DetailsCommandeDAO.getLesLignes(laCommande.getNum());
+				 laCommande.setLesArticles(details);
 				 laCommande.setPepito(ALL_HAIL_PEPITO);
 				 laCommande.setLeSbire(SBIREMAN);
 				

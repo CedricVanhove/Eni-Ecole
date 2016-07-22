@@ -14,7 +14,7 @@ import metier.DetailsCommande;
 
 public class DetailsCommandeDAO 
 {
-	public static ArrayList<DetailsCommande> getLesLignes() throws SQLException
+	public static ArrayList<DetailsCommande> getLesLignes(int id) throws SQLException
 	 {
 		 
 		 ArrayList<DetailsCommande> lesLignes = new ArrayList<DetailsCommande>();
@@ -27,9 +27,9 @@ public class DetailsCommandeDAO
 			 Connection conn = AccesBase.getConnection();
 			 state = conn.createStatement();
 			    
-			 result = state.executeQuery("SELECT * FROM detailsCommande");
-			 ResultSetMetaData resultMeta = result.getMetaData();   
-			   
+			 result = state.executeQuery("SELECT * FROM detailsCommande where idcommande="+id);
+			
+			
 			 while(result.next())
 			 {
 				 Commande laCommande = new Commande();

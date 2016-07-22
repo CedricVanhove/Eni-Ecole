@@ -88,4 +88,14 @@
     <servlet-name>GestionCommande</servlet-name>
     <url-pattern>/GestionCommande</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListerCommande</display-name>
+    <servlet-name>ListerCommande</servlet-name>
+    <servlet-class>Servlet.ListerCommande</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListerCommande</servlet-name>
+    <url-pattern>/ListerCommande</url-pattern>
+  </servlet-mapping>
 </web-app>
