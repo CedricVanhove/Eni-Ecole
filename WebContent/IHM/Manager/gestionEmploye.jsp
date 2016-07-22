@@ -54,7 +54,7 @@
 											<td><%=unePersonne.getLogin()%></td>											
 							                <td><input type="checkbox" name="managerCheckbox" id="managerCheckbox" value="<%=i%>"></td>
 							                <td><button id="ouvreModal" type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalModif">d</button>
-							                <button type="button" class="btn btn-warning" onclick="ModifPersonne(<%=unePersonne.getNum() %>, '<%=unePersonne.getNom() %>', '<%=unePersonne.getPrenom() %>', <%=unePersonne.getLogin() %>);" >Modifier</button></td>
+							                <button type="button" class="btn btn-warning" onclick="ModifPersonne(<%=unePersonne.getNum() %>, '<%=unePersonne.getNom() %>', '<%=unePersonne.getPrenom() %>', '<%=unePersonne.getLogin() %>');" >Modifier</button></td>
 							                <th><input  class="btn btn-danger" type="submit" value="Supprimer"/></th>
 							               
 							            </tr>
