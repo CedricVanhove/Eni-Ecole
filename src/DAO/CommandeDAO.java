@@ -30,7 +30,7 @@ public class CommandeDAO
 			 Connection conn = AccesBase.getConnection();
 			 state = conn.createStatement();
 			    
-			 result = state.executeQuery("SELECT * FROM Commande ORDER BY DATE");
+			 result = state.executeQuery("SELECT * FROM Commande ORDER BY DATEcommande");
 			   
 			   
 			 while(result.next())

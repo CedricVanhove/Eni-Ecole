@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+
+<%@ page  import ="metier.*, java.util.*, java.text.*" %>
+
 <%@ include file="../include/headerManager.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -23,6 +26,10 @@
 										
 								<h1>Gestion des commandes</h1>
 								<input  class="btn btn-warning" type="submit" value="Import"/>
+								<%
+										ArrayList<Commande> listeCommande=(ArrayList<Commande>)request.getSession().getAttribute("ListerCommande");
+										int i=0;
+									%>
 								<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 							        <thead>
 							            <tr>
@@ -32,31 +39,25 @@
 							            </tr>
 							        </thead>
 							        <tbody>
+							            <% 							        
+									
+									for(Commande uneCommande : listeCommande) {
+										i=i+1;
+										
+									%>
 							            <tr>
-							                <th>5454789</th>
-							                <th>En cours de traitement</th>
-							                <th>Kevin</th>
+							            	<td><%=uneCommande.getNum()%></td>
+											<td><%=uneCommande.getEtats()%></td>
+											<td><%=uneCommande.getLeSbire()%></td>
+											
+											<td><button type="button" data-toggle="modal" data-target="#myModalModif" id="ouvreModal" style="display:none"></button>
+										
+							                						                
 							            </tr>
-							            <tr>
-							                <th>9768486</th>
-							                <th>En cours de traitement</th>
-							                <th>Cédric</th>
-							            </tr>
-							            <tr>
-							                <th>9458754</th>
-							                <th>En cours de traitement</th>
-							                <th>Mehdi</th>
-							            </tr>
-							            <tr>
-							                <th>9545484</th>
-							                <th>En attente</th>
-							                <th>???</th>
-							            </tr>
-							            <tr>
-							                <th>8784848</th>
-							                <th>En attente</th>
-							                <th>???</th>
-							            </tr>
+							              <%
+							              
+									}
+									%>
 									</tbody>
     							</table>
     															
@@ -88,11 +89,7 @@
 							            </tr>
 									</tbody>
     							</table>
-								<script type="text/javascript">
-									$(document).ready(function() {
-									    $('#example').DataTable();
-									} );
-								</script>		 
+									 
 							</div>
 						</div>						
 					</div>				
