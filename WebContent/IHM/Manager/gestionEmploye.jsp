@@ -119,7 +119,7 @@
 								      </div>
 								      <div class="modal-body">
 								      	
-								      	<h1>Modification d'un article</h1>	
+								      	<h1>Modification d'un employé</h1>	
 								      	
 								      		<form class="form-horizontal col-md-12" method="post" accept-charset="utf-8" action="<%=request.getContextPath()%>/GestionEmploye">
 											<div class="form-group">
@@ -131,15 +131,13 @@
 											<div class="form-group">
 												<input name="loginEmpModif" placeholder="Login" class="form-control input-md" type="text" id="loginEmpModif"/>
 											</div>
-											<div class="form-group">
-												<input name="mdpEmpModif" placeholder="Mdp" class="form-control input-md" type="text" id="mdpEmpModif"/>
-											</div>
+											
 											<div class="form-group">
 												<INPUT type="checkbox" name="managerCheckbox" value="3" >
 											</div>
 											
 											<div class="form-group">
-										<div class="col-md-offset-0 col-md-8"><input  class="btn btn-success btn btn-success" name="bAjouter" type="submit" value="Ajouter"/></div>
+										<div class="col-md-offset-0 col-md-8"><input  class="btn btn-success btn btn-success" name="bModifier" type="submit" value="Modifier"/></div>
 										</div>	
 						      			</form>
 						      			
@@ -157,9 +155,9 @@
 										
 										
 										document.getElementById('ouvreModal').click();
-										document.getElementById("libelleArticle").value=id;
+										document.getElementById("loginEmpModif").value=login;
 										document.getElementById("nomEmpModif").value=nom;
-										document.getElementById('loginEmpModif').value=prenom;
+										document.getElementById('prenomEmpModif').value=prenom;
 										
 										
 									}

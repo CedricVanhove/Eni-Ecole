@@ -82,7 +82,26 @@ public class GestionEmploye extends HttpServlet {
 		
 		if(modifParam != null)
 		{
+			unePersonne.setNom(nom);
+			unePersonne.setPrenom(prenom);
+			unePersonne.setLogin(login);
 			
+			if(estManager != null) 
+			{
+				unePersonne.setEstManager(true);
+			}
+			else
+			{
+				unePersonne.setEstManager(false);
+			}
+			
+			try {
+				PersonnelDAO.Update(unePersonne);
+				//ajouter unePersonne dans lister emplouyé
+				} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}		
 		
 		if(supprimeParam != null)
