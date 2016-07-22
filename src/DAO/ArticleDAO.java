@@ -107,7 +107,7 @@ public class ArticleDAO
 	try
 	{
 		 Connection conn = AccesBase.getConnection();
-		 state = conn.prepareStatement( "Update article set libelle=?,description=?,poids=? where article=?" );
+		 state = conn.prepareStatement( "Update article set libelle=?,description=?,poids=? where idArticle=?" );
 
 		 state.setString( 1, item.getLibelle());
 		  state.setString( 2, item.getDescription());

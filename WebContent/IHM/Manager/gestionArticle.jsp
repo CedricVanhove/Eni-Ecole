@@ -34,8 +34,7 @@
 							                <th>Libelle</th>
 							                <th>Stock</th>
 							                <th>Poids Unitaire</th>
-							                <th></th>
-							                <th></th>
+							                <th></th>							            
 							            </tr>
 							        </thead>
 							        <tbody>
@@ -50,9 +49,9 @@
 											<td><%=unArticle.getLibelle()%></td>
 											<td><%=unArticle.getDescription()%></td>
 											<td><%=unArticle.getPoids()%></td>			
-											<td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModalModif" id="ouvreModal" style="display:none"></button>
+											<td><button type="button" data-toggle="modal" data-target="#myModalModif" id="ouvreModal" style="display:none"></button>
 											<button type="button" class="btn btn-warning" onclick="ModifArticle(<%=unArticle.getNum() %>, '<%=unArticle.getLibelle() %>', '<%=unArticle.getDescription() %>', <%=unArticle.getPoids() %>);" >Modifier</button></td>
-							                <td><input  class="btn btn-danger" type="submit" value="Supprimer"/></td>							                
+							                						                
 							            </tr>
 							              <%
 							              
@@ -82,7 +81,7 @@
 											</div> 
 											
 											<div class="form-group">
-												<input name="descriptionArticle" placeholder="description" class="form-control input-md" type="text" id="descriptionArticleAss"/>
+												<input name="descriptionArticle" placeholder="description" class="form-control input-md" type="text" id="descriptionArticleAdd"/>
 											</div>
 											
 											<div class="form-group">
