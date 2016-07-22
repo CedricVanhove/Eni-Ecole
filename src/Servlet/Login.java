@@ -99,7 +99,7 @@ public class Login extends HttpServlet {
 				{
 					isEmploye=true;			
 					utilisateurConnecteAttName="Utilisateur";
-					menuJsp="/candidat/accueilCandidat.jsp";
+					menuJsp="/IHM/User/gestionCommandeUser.jsp";
 				}
 			}
 			else

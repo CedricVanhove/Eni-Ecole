@@ -44,7 +44,7 @@ public class ClientDAO {
 				client.setId(idClient);
 				client.setNom(rs.getString("nom"));				
 				client.setAdresse(rs.getString("adresse"));
-				client.setCP(rs.getString("cp"));
+				client.setCP(rs.getString("codePostal"));
 				client.setVille(rs.getString("ville"));
 				
 			}
