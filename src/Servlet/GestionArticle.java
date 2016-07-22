@@ -67,26 +67,41 @@ public class GestionArticle extends HttpServlet {
 		String desc = request.getParameter("descriptionArticle");
 		String id = request.getParameter("idArticle");
 		Article article = new Article();
+		ArrayList<Article> lesArticles=(ArrayList<Article>) request.getSession().getAttribute("ListerArticle");
+		int indexArticle;
 		
 		if(ajouterParam != null)
 		{
+			
+			if (lesArticles.isEmpty())
+			{
+				lesArticles= new ArrayList<Article>();
+			}
 			article.setLibelle(libArt);
 			article.setDescription(desc);
 			article.setPoids(pdsArt);		
 			ArticleDAO.Insert(article);
+			lesArticles.add(article);
+			article.setNum(lesArticles.get(lesArticles.size()-1).getNum() +1);
+			request.getSession().setAttribute("ListerArticle",lesArticles);
 		}
 		if(modifParam != null)
 		{
+			indexArticle=lesArticles.indexOf(article);
 			article.setNum(Integer.parseInt(id));
 			article.setLibelle(libArt);
 			article.setDescription(desc);
 			article.setPoids(pdsArt);		
 			ArticleDAO.Update(article);
+			lesArticles.set(indexArticle, article);
 		}if(supprimeParam != null)
 		{
 			
 			ArticleDAO.Delete(Integer.parseInt(id));
+			lesArticles.remove(article);
 		}
 		response.sendRedirect("IHM/Manager/gestionArticle.jsp");
+		//dispatcher = getServletContext().getRequestDispatcher(request.getContextPath()+"/IHM/Manager/gestionArticle.jsp");
+		//dispatcher.forward(request, response);
 }
 }
