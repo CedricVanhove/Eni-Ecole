@@ -131,9 +131,9 @@
 											<div class="form-group">
 												<input name="loginEmpModif" placeholder="Login" class="form-control input-md" type="text" id="loginEmpModif"/>
 											</div>
-											
+											<input type="hidden" id=monId>
 											<div class="form-group">
-												<INPUT type="checkbox" name="managerCheckbox" value="3" >
+												<INPUT type="checkbox" name="managerCheckboxmodif" value="3" >
 											</div>
 											
 											<div class="form-group">
@@ -158,7 +158,9 @@
 										document.getElementById("loginEmpModif").value=login;
 										document.getElementById("nomEmpModif").value=nom;
 										document.getElementById('prenomEmpModif').value=prenom;
-										
+										document.getElementById("nomEmpModif").value=nom;
+										document.getElementById("monId").value=id;
+										console.log(document.getElementById("monId").value);
 										
 									}
 								</script>
